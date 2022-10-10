@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public int Health;
     Weapons EquipedWeapon;
     Rigidbody RB;
-    BoxCollider MeleeAttackZone;
+    public BoxCollider MeleeAttackZone;
     public float Speed;
     public float Seconds = 2;
     bool isDead = false;
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         RB = GetComponent<Rigidbody>();
-        MeleeAttackZone = GetComponent<BoxCollider>();
+        //MeleeAttackZone = GetComponent<BoxCollider>();
         MeleeAttackZone.enabled = false;
     }
 
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         {
             Move();
 
-            if (EquipedWeapon != null)
+            if (EquipedWeapon == null)
             {
                 if (Input.GetButton("Fire1"))
                 {

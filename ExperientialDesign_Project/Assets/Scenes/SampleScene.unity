@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 0
+  MeleeAttackZone: {fileID: 0}
   Speed: 2
   Seconds: 2
 --- !u!65 &148630825
@@ -4386,6 +4387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 0
+  MeleeAttackZone: {fileID: 935950118}
   Speed: 5
   Seconds: 2
 --- !u!1 &4126789522320551331
@@ -4877,6 +4879,7 @@ GameObject:
   - component: {fileID: 4883544851300023328}
   - component: {fileID: 4883544851300023335}
   - component: {fileID: 4883544851300023334}
+  - component: {fileID: 4883544851300023336}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4935,6 +4938,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &4883544851300023336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4883544851300023333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b387fefd75f91e54ea8eb12e5a4cbf70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FollowTarget: {fileID: 4437181754010123950}
+  SmoothSpeed: 0.125
+  offSet: {x: 0.09, y: 3.02, z: -2.94}
 --- !u!1 &4950820782453777684
 GameObject:
   m_ObjectHideFlags: 0
