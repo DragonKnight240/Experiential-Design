@@ -38,6 +38,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    void TakeDamage(int amount)
+    {
+        Health -= amount;
+
+        if(Health <= 0)
+        {
+            Death();
+        }
+    }
+
     void Move()
     {
         float x = Input.GetAxis("Horizontal");
@@ -74,12 +84,20 @@ public class Player : MonoBehaviour
     {
         if(collision.transform.CompareTag("MeleeZone"))
         {
-            Health -= collision.transform.GetComponent<Enemy>().Damage;
+            TakeDamage(collision.transform.GetComponent<Enemy>().Damage);
+        }
 
-            if(Health <= 0)
-            {
-                Death();
-            }
+        if(collision.transform.CompareTag("PlayerRange"))
+        {
+            collision.transform.GetComponent<Enemy>().ChasePlayer = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.CompareTag("PlayerRange"))
+        {
+            collision.transform.GetComponent<Enemy>().ChasePlayer = false;
         }
     }
 }

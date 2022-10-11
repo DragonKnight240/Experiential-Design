@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerRange
   - MeleeZone
+  - PatrolLocation
+  - Enemy
   layers:
   - Default
   - TransparentFX
