@@ -6,14 +6,14 @@ public class Enemy : MonoBehaviour
 {
     public int Health;
     public int Damage;
-    public int Speed;
+    public int ChaseSpeed;
     public int AttackSpeed;
     float AttackTimer = 0;
+    EnemyMovement Movement;
 
     bool InRange = false;
     Vector3 StartPos;
     internal bool ChasePlayer = false;
-    SphereCollider PlayerRange;
     public BoxCollider MeleeZone;
     Player Player;
 
@@ -21,8 +21,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         StartPos = transform.position;
-        PlayerRange = GetComponent<SphereCollider>();
         Player = FindObjectOfType<Player>();
+        Movement = GetComponent<EnemyMovement>();
     }
 
     // Update is called once per frame
@@ -63,23 +63,38 @@ public class Enemy : MonoBehaviour
     {
         if (ChasePlayer)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, Speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, ChaseSpeed * Time.deltaTime);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.transform.CompareTag("PlayerRange"))
+        if (other.transform.CompareTag("PlayerRange"))
         {
             InRange = true;
+            ChasePlayer = false;
+        }
+
+        if (other.transform.CompareTag("Player"))
+        {
+            ChasePlayer = true;
+            Movement.enabled = false;
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if(collision.transform.CompareTag("PlayerRange"))
+        print(other.name);
+        if (other.transform.CompareTag("PlayerRange"))
         {
             InRange = false;
+            ChasePlayer = true;
+        }
+
+        if (other.transform.CompareTag("Player"))
+        {
+            ChasePlayer = true;
+            Movement.enabled = false;
         }
     }
 }

@@ -8,7 +8,7 @@ public class Patrol : MonoBehaviour
     internal GameObject PatrolTo;
     int PatrolLocationsMax = -1;
     int CurrentPatrolLocation = 0;
-    Enemy enemy;
+    EnemyMovement enemy;
 
 
     // Start is called before the first frame update
@@ -26,8 +26,8 @@ public class Patrol : MonoBehaviour
             }
             else if (child.CompareTag("Enemy"))
             {
-                enemy = child.gameObject.GetComponent<Enemy>();
-                //enemy.PatrolComp = this;
+                enemy = child.gameObject.GetComponent<EnemyMovement>();
+                enemy.MovementPatrol = this;
             }
 
         }
@@ -50,14 +50,13 @@ public class Patrol : MonoBehaviour
         {
             CurrentPatrolLocation++;
 
-            if (CurrentPatrolLocation <= PatrolLocationsMax)
-            {
-                PatrolTo = PatrolLocation[CurrentPatrolLocation];
-            }
-            else
+            if (CurrentPatrolLocation > PatrolLocationsMax)
             {
                 CurrentPatrolLocation = 0;
             }
+
+            PatrolTo = PatrolLocation[CurrentPatrolLocation];
+            enemy.transform.LookAt(PatrolTo.transform.position);
         }
     }
 }

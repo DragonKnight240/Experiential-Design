@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     public MovementTypes MovementType;
-    Patrol MovementPatrol;
+    internal Patrol MovementPatrol;
     public float Speed;
 
 
