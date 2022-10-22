@@ -80,6 +80,16 @@ public class Enemy : MonoBehaviour
             ChasePlayer = true;
             Movement.enabled = false;
         }
+
+        if(other.transform.CompareTag("MeleeZone"))
+        {
+            Health -= other.GetComponent<Player>().EquipedWeapon.Damage;
+
+            if(Health <= 0)
+            {
+                transform.parent.transform.gameObject.SetActive(false);
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)

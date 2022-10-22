@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int Health;
-    Weapons EquipedWeapon;
+    internal Weapons EquipedWeapon;
     Rigidbody RB;
     public BoxCollider MeleeAttackZone;
     public float Speed;
@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!isDead)
         {
             Move();
