@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
+  m_Name: Elpha3
+  m_EditorClassIdentifier: 
+  Speaker: Rin
+  Script: Yes. They aren't pleasant to outsiders like Lucifenia is. Fa- eh King Arth's
+    expansion war has made it normal to see people of other races.
+  Repeatable: 0
