@@ -9,5 +9,6 @@ public class Dialogue : ScriptableObject
     [TextArea()]
     public string Script;
     public bool Repeatable;
+    public int branch;
 
 }

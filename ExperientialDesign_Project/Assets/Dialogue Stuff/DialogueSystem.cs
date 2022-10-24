@@ -8,12 +8,15 @@ public class DialogueSystem : MonoBehaviour
     public struct cutscene
     {
         public List<Dialogue> script;
+        public List<Dialogue> Branch1;
+        public List<Dialogue> Branch2;
     }
 
     public static DialogueSystem Instance;
 
     public List<cutscene> Cutscenes;
     internal Dialogue currentDialogue;
+    //public 
     int currentCutsceneID = 0;
     //public AudioSource voiceOverSource;
 

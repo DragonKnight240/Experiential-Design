@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Game 7
   m_EditorClassIdentifier: 
-  Speaker: Germaine
-  Script: Don't say it?
+  Speaker: Rin
+  Script: ...
   Repeatable: 0
+  branch: 0
