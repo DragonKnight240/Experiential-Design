@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance_;
+    int Karma = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +18,20 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    void increaseKarma(int amount)
+    {
+        Karma += amount;
+    }
+
+    void decreaseKarma(int amount)
+    {
+        Karma -= amount;
+    }
+
+    public int GetKarma()
+    {
+        return Karma;
     }
 }

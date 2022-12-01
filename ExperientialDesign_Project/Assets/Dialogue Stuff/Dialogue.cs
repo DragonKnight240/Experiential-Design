@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dialogue")]
 public class Dialogue : ScriptableObject
 {
+    public DialogueSystem.DialogueTreeTypes Type;
     public string Speaker;
     [TextArea()]
     public string Script;
