@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public int cutsceneID;
+    public DialogueSystem.DialogueTreeTypes Type;
 
     private void Start()
     {
@@ -15,7 +16,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            DialogueSystem.Instance.updateDialogue(cutsceneID);
+            DialogueSystem.Instance.updateDialogue(cutsceneID,Type);
         }
     }
 }

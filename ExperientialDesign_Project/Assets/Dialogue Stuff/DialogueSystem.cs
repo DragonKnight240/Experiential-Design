@@ -5,25 +5,9 @@ using UnityEngine;
 public class DialogueSystem : MonoBehaviour
 {
     [System.Serializable]
-    public struct cutsceneKarma
+    public struct cutscene
     {
         public List<Dialogue> script;
-        public List<Dialogue> LowKarma;
-        public int KarmaNeededLow;
-        public List<Dialogue> HighKarma;
-        public int KarmaNeededHigh;
-        public List<Dialogue> NeutralKarma;
-    }
-
-    [System.Serializable]
-    public struct cutsceneCharacterOpinion
-    {
-        public List<Dialogue> script;
-        public List<Dialogue> LowOpinion;
-        public int OpinionNeededLow;
-        public List<Dialogue> HighOpinion;
-        public int OpinionNeededHigh;
-        public List<Dialogue> Neutral;
     }
 
     [System.Serializable]
@@ -45,11 +29,11 @@ public class DialogueSystem : MonoBehaviour
 
     public static DialogueSystem Instance;
 
-    public List<cutsceneKarma> CutscenesKarma;
-    public List<cutsceneCharacterOpinion> CutscenesCharacter;
+    public List<cutscene> Cutscenes;
     internal Dialogue currentDialogue;
+    internal int CurrentDialogueID;
     int currentCutsceneID = 0;
-    DialogueTree CurrentTreeStat;
+    internal DialogueTree CurrentTreeStat;
     DialogueTreeTypes CurrentTreeType;
     //public AudioSource voiceOverSource;
 
@@ -71,6 +55,7 @@ public class DialogueSystem : MonoBehaviour
         WhichTreeToFollow(cutsceneID, NPC);
         currentCutsceneID = cutsceneID;
 
+        currentDialogue = Cutscenes[currentCutsceneID].script[CurrentDialogueID];
     }
 
     public void WhichTreeToFollow(int cutsceneID, Character NPC)
@@ -79,11 +64,11 @@ public class DialogueSystem : MonoBehaviour
         {
             case DialogueTreeTypes.Karma:
                 {
-                    if (CutscenesKarma[cutsceneID].KarmaNeededLow > GameManager.Instance_.GetKarma())
+                    if (Cutscenes[cutsceneID].script[CurrentDialogueID].LowValue > GameManager.Instance_.GetKarma())
                     {
                         CurrentTreeStat = DialogueTree.Low;
                     }
-                    else if (CutscenesKarma[cutsceneID].KarmaNeededHigh < GameManager.Instance_.GetKarma())
+                    else if (Cutscenes[cutsceneID].script[CurrentDialogueID].HighValue < GameManager.Instance_.GetKarma())
                     {
                         CurrentTreeStat = DialogueTree.High;
                     }
@@ -96,11 +81,11 @@ public class DialogueSystem : MonoBehaviour
                 }
             case DialogueTreeTypes.CharacterOpinion:
                 {
-                    if (CutscenesCharacter[cutsceneID].OpinionNeededLow > NPC.GetOpinionOfPlayer())
+                    if (Cutscenes[cutsceneID].script[CurrentDialogueID].LowValue > NPC.GetOpinionOfPlayer())
                     {
                         CurrentTreeStat = DialogueTree.Low;
                     }
-                    else if (CutscenesCharacter[cutsceneID].OpinionNeededHigh < NPC.GetOpinionOfPlayer())
+                    else if (Cutscenes[cutsceneID].script[CurrentDialogueID].HighValue < NPC.GetOpinionOfPlayer())
                     {
                         CurrentTreeStat = DialogueTree.High;
                     }

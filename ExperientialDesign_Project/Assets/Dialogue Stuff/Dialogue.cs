@@ -9,7 +9,11 @@ public class Dialogue : ScriptableObject
     public string Speaker;
     [TextArea()]
     public string Script;
+    [TextArea()]
+    public string ScriptHigh;
+    public int HighValue;
+    [TextArea()]
+    public string ScriptLow;
+    public int LowValue;
     public bool Repeatable;
-    public int branch;
-
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static DialogueSystem;
 
 public class TypeWriterEffect : MonoBehaviour
 {
@@ -33,7 +34,29 @@ public class TypeWriterEffect : MonoBehaviour
     IEnumerator Play()
     {
         textComponent.text = " ";
-        foreach (char i in DialogueSystem.Instance.currentDialogue.Script)
+
+        string dialogue = "";
+
+        switch (DialogueSystem.Instance.CurrentTreeStat)
+        {
+            case DialogueTree.High:
+                dialogue = DialogueSystem.Instance.currentDialogue.ScriptHigh;
+                break;
+            case DialogueTree.Neutral:
+                dialogue = DialogueSystem.Instance.currentDialogue.Script;
+                break;
+            case DialogueTree.Low:
+                dialogue = DialogueSystem.Instance.currentDialogue.ScriptLow;
+                break;
+            case DialogueTree.None:
+                dialogue = DialogueSystem.Instance.currentDialogue.Script;
+                break;
+            default:
+                dialogue = DialogueSystem.Instance.currentDialogue.Script;
+                break;
+        }
+
+        foreach (char i in dialogue)
         {
             textComponent.text += i;
             yield return new WaitForSeconds(waitSecondsText);
