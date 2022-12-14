@@ -16,6 +16,10 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            Time.timeScale = 0;
+            DialogueSystem.Instance.CurrentDialogueMax = DialogueSystem.Instance.Cutscenes[cutsceneID].script.Count;
+            DialogueSystem.Instance.CurrentDialogueID = 0;
+            DialogueSystem.Instance.TWEffect.CurrentTrigger = this;
             DialogueSystem.Instance.updateDialogue(cutsceneID,Type);
         }
     }

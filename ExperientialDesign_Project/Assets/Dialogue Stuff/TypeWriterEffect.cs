@@ -2,40 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using static DialogueSystem;
 
 public class TypeWriterEffect : MonoBehaviour
 {
     public GameObject UIPanel;
-    Text textComponent;
+    TextMeshProUGUI textComponent;
     public float waitSecondsText = 0.2f;
     bool Finished = false;
-
-    AudioSource clip;
-
+    float timer = 0;
+    string dialogue = "";
+    int CharNum = 0;
+    int CharNumMax;
+    bool InUse = false;
+    internal DialogueTrigger CurrentTrigger;
+    public GameObject SelfSpeaker;
+    public GameObject OtherSpeaker;
+    public GameObject TextUIPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        clip = GetComponent<AudioSource>();
-        textComponent = GetComponentInChildren<Text>();
+        textComponent = TextUIPanel.GetComponentInChildren<TextMeshProUGUI>();
         textComponent.text = "";
     }
 
-    public void playIenumerator()
+    private void Update()
     {
-        if (!clip.isPlaying)
+        if(InUse)
         {
-            //clip.Play();
-            StartCoroutine("Play");
+            timer += Time.unscaledDeltaTime;
+            if (!Finished)
+            {
+                NextLetter();
+            }
+            OnPress();
         }
     }
 
-    IEnumerator Play()
+    public void NewDialogue()
     {
         textComponent.text = " ";
-
-        string dialogue = "";
 
         switch (DialogueSystem.Instance.CurrentTreeStat)
         {
@@ -56,19 +64,78 @@ public class TypeWriterEffect : MonoBehaviour
                 break;
         }
 
-        foreach (char i in dialogue)
+        if(DialogueSystem.Instance.currentDialogue.Speaker != "Rin" || DialogueSystem.Instance.currentDialogue.Speaker != "Allen")
         {
-            textComponent.text += i;
-            yield return new WaitForSeconds(waitSecondsText);
+            OtherSpeaker.GetComponentInChildren<TextMeshProUGUI>().text = DialogueSystem.Instance.currentDialogue.Speaker;
+            OtherSpeaker.SetActive(true);
+            SelfSpeaker.SetActive(false);
+        }
+        else
+        {
+            SelfSpeaker.GetComponentInChildren<TextMeshProUGUI>().text = DialogueSystem.Instance.currentDialogue.Speaker;
+            OtherSpeaker.SetActive(false);
+            SelfSpeaker.SetActive(true);
         }
 
+        CharNumMax = dialogue.Length;
+        CharNum = 0;
+        InUse = true;
+        UIPanel.SetActive(true);
+    }
+
+    void NextLetter()
+    {
+        if (timer >= waitSecondsText)
+        {
+            textComponent.text += dialogue[CharNum];
+            CharNum++;
+            if(CharNum >= CharNumMax)
+            {
+                Finished = true;
+                CharNum = 0;
+            }
+            timer = 0;
+        }
     }
 
     void OnPress()
     {
-        if(Input.GetButtonDown("Fire1") && UIPanel.activeInHierarchy && !Finished)
+        if (Input.GetButtonDown("Fire1"))
         {
-            textComponent.text = DialogueSystem.Instance.currentDialogue.Script;
+            if (UIPanel.activeInHierarchy && InUse && Finished)
+            {
+                CheckDialogue();
+            }
+            else
+            {
+                for (int i = CharNum; i < CharNumMax; i++)
+                {
+                    textComponent.text += dialogue[i];
+                }
+
+                Finished = true;
+                CharNum = 0;
+                timer = 0;
+            }
+        }
+    }
+
+    void CheckDialogue()
+    {
+        if (DialogueSystem.Instance.CurrentDialogueID++ >= DialogueSystem.Instance.CurrentDialogueMax)
+        {
+            Finished = false;
+            CharNum = 0;
+            InUse = false;
+            UIPanel.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Finished = false;
+            CharNum = 0;
+            timer = 0;
+            DialogueSystem.Instance.updateDialogue(CurrentTrigger.cutsceneID, CurrentTrigger.Type);
         }
     }
 }

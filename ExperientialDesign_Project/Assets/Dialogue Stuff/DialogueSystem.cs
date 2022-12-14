@@ -32,10 +32,11 @@ public class DialogueSystem : MonoBehaviour
     public List<cutscene> Cutscenes;
     internal Dialogue currentDialogue;
     internal int CurrentDialogueID;
+    internal int CurrentDialogueMax = 0;
     int currentCutsceneID = 0;
     internal DialogueTree CurrentTreeStat;
     DialogueTreeTypes CurrentTreeType;
-    //public AudioSource voiceOverSource;
+    internal TypeWriterEffect TWEffect;
 
     private void Start()
     {
@@ -47,15 +48,19 @@ public class DialogueSystem : MonoBehaviour
         {
             Destroy(this);
         }
+
+        TWEffect = GetComponent<TypeWriterEffect>();
     }
 
     public void updateDialogue(int cutsceneID, DialogueTreeTypes TreeType, Character NPC = null)
     {
-        CurrentTreeType = TreeType;
+        CurrentTreeType = Cutscenes[currentCutsceneID].script[CurrentDialogueID].Type;
         WhichTreeToFollow(cutsceneID, NPC);
         currentCutsceneID = cutsceneID;
 
         currentDialogue = Cutscenes[currentCutsceneID].script[CurrentDialogueID];
+
+        TWEffect.NewDialogue();
     }
 
     public void WhichTreeToFollow(int cutsceneID, Character NPC)
