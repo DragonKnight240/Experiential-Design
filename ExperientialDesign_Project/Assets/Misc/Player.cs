@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public BoxCollider MeleeAttackZone;
     public float Speed;
     public float Seconds = 2;
+    float Timer = 0;
     bool isDead = false;
 
 
@@ -24,6 +25,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(MeleeAttackZone.enabled)
+        {
+            Timer += Time.deltaTime;
+
+            if(Timer >= Seconds)
+            {
+                MeleeAttackZone.enabled = false;
+                Timer = 0;
+            }
+        }
 
         if (!isDead)
         {
@@ -33,7 +44,7 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetButton("Fire1"))
                 {
-                    StartCoroutine(Attack());
+                    MeleeAttackZone.enabled = true;
                 }
             }
         }
@@ -67,13 +78,6 @@ public class Player : MonoBehaviour
     void EquipWeapon(Weapons newWeapon)
     {
         EquipedWeapon = newWeapon;
-    }
-
-    IEnumerator Attack()
-    {
-        MeleeAttackZone.enabled = true;
-        yield return new WaitForSeconds(Seconds);
-        MeleeAttackZone.enabled = false;
     }
 
     void Death()

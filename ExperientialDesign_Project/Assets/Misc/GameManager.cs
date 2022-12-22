@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance_;
     int Karma = 0;
+    int Money = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void increaseKarma(int amount)
+    public void increaseKarma(int amount)
     {
         Karma += amount;
     }
 
-    void decreaseKarma(int amount)
+    public void decreaseKarma(int amount)
     {
         Karma -= amount;
     }
@@ -33,5 +34,20 @@ public class GameManager : MonoBehaviour
     public int GetKarma()
     {
         return Karma;
+    }
+
+    public int GetMoney()
+    {
+        return Money;
+    }
+
+    public void increaseMoney(int amount)
+    {
+        Money += amount;
+    }
+
+    public void decreaseMoney(int amount)
+    {
+        Money -= amount;
     }
 }

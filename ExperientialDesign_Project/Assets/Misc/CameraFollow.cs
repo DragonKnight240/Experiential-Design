@@ -8,6 +8,11 @@ public class CameraFollow : MonoBehaviour
     public float SmoothSpeed;
     public Vector3 offSet;
 
+    private void Start()
+    {
+        transform.position = FollowTarget.position + offSet;
+    }
+
     private void FixedUpdate()
     {
         Vector3 DesiredPosition = FollowTarget.position + offSet;

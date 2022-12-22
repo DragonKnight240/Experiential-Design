@@ -16,4 +16,5 @@ public class Dialogue : ScriptableObject
     public string ScriptLow;
     public int LowValue;
     public bool Repeatable;
+    public List<Choice> Choices;
 }

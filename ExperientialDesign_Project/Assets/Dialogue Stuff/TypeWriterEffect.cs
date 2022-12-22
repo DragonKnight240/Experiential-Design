@@ -16,7 +16,7 @@ public class TypeWriterEffect : MonoBehaviour
     int CharNum = 0;
     int CharNumMax;
     bool InUse = false;
-    internal DialogueTrigger CurrentTrigger;
+    internal int CurrentCutsceneID;
     public GameObject SelfSpeaker;
     public GameObject OtherSpeaker;
     public GameObject TextUIPanel;
@@ -30,7 +30,7 @@ public class TypeWriterEffect : MonoBehaviour
 
     private void Update()
     {
-        if(InUse)
+        if(InUse && !DialogueSystem.Instance.ChoicePanel.activeInHierarchy)
         {
             timer += Time.unscaledDeltaTime;
             if (!Finished)
@@ -122,7 +122,7 @@ public class TypeWriterEffect : MonoBehaviour
 
     void CheckDialogue()
     {
-        if (DialogueSystem.Instance.CurrentDialogueID++ >= DialogueSystem.Instance.CurrentDialogueMax)
+        if (DialogueSystem.Instance.CurrentDialogueID++ >= DialogueSystem.Instance.CurrentDialogueMax && !(DialogueSystem.Instance.currentDialogue.Choices.Count != 0))
         {
             Finished = false;
             CharNum = 0;
@@ -130,12 +130,17 @@ public class TypeWriterEffect : MonoBehaviour
             UIPanel.SetActive(false);
             Time.timeScale = 1;
         }
+        else if(DialogueSystem.Instance.currentDialogue.Choices.Count != 0)
+        {
+            DialogueSystem.Instance.SetChoices();
+        }
         else
         {
             Finished = false;
             CharNum = 0;
             timer = 0;
-            DialogueSystem.Instance.updateDialogue(CurrentTrigger.cutsceneID, CurrentTrigger.Type);
+
+            DialogueSystem.Instance.updateDialogue(CurrentCutsceneID);
         }
     }
 }

@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Opening1
   m_EditorClassIdentifier: 
+  Type: 2
   Speaker: Germaine
-  Script: Rin are you sure you don't wanna come with me to see Charlotte?
+  Script: Isn't it obvious!? You aren't the princess, you're just a servent!
+  ScriptHigh: 
+  HighValue: 0
+  ScriptLow: 
+  LowValue: 0
   Repeatable: 0
+  Choices: []

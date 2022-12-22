@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class DialogueSystem : MonoBehaviour
     public static DialogueSystem Instance;
 
     public List<cutscene> Cutscenes;
+    public GameObject ChoiceButtonPrefab;
+    public GameObject ChoicePanel;
     internal Dialogue currentDialogue;
     internal int CurrentDialogueID;
     internal int CurrentDialogueMax = 0;
@@ -37,6 +40,7 @@ public class DialogueSystem : MonoBehaviour
     internal DialogueTree CurrentTreeStat;
     DialogueTreeTypes CurrentTreeType;
     internal TypeWriterEffect TWEffect;
+    internal Character CurrentNPC;
 
     private void Start()
     {
@@ -52,9 +56,10 @@ public class DialogueSystem : MonoBehaviour
         TWEffect = GetComponent<TypeWriterEffect>();
     }
 
-    public void updateDialogue(int cutsceneID, DialogueTreeTypes TreeType, Character NPC = null)
+    public void updateDialogue(int cutsceneID, Character NPC = null)
     {
         CurrentTreeType = Cutscenes[currentCutsceneID].script[CurrentDialogueID].Type;
+        CurrentNPC = NPC;
         WhichTreeToFollow(cutsceneID, NPC);
         currentCutsceneID = cutsceneID;
 
@@ -106,6 +111,29 @@ public class DialogueSystem : MonoBehaviour
                     CurrentTreeType = DialogueTreeTypes.None;
                     break;
                 }
+        }
+    }
+
+    public void SetChoices()
+    {
+        foreach(Choice Choice in currentDialogue.Choices)
+        {
+            GameObject NewChoice = Instantiate(ChoiceButtonPrefab, ChoicePanel.transform.GetChild(0).transform);
+            NewChoice.GetComponent<ChoiceButton>().choice = Choice;
+            NewChoice.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Choice.Description;
+            NewChoice.GetComponent<ChoiceButton>().NPCTalkingTo = CurrentNPC;
+        }
+
+        ChoicePanel.SetActive(true);
+    }
+
+    public void Choosen()
+    {
+        ChoicePanel.SetActive(false);
+
+        for (int i = 0; i < ChoicePanel.transform.GetChild(0).childCount; i++)
+        {
+            Destroy(ChoicePanel.transform.GetChild(0).GetChild(i));
         }
     }
 }
