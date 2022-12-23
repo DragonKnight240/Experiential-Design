@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f027435b327df84f9e154fa8e264701, type: 3}
   m_Name: EmptyBucket
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
+  Name: Empty Bucket
+  Description: A bucket you have been asked to fill with water.
   Image: {fileID: 0}

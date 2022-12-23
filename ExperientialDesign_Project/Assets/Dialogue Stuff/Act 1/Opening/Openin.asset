@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Openin
   m_EditorClassIdentifier: 
-  Type: 0
-  Speaker: 
-  Script: 
+  Type: 2
+  Speaker: Germaine
+  Script: I'll get you out of this cell
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 

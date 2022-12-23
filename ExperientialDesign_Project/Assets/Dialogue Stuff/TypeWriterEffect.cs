@@ -70,6 +70,11 @@ public class TypeWriterEffect : MonoBehaviour
             OtherSpeaker.SetActive(true);
             SelfSpeaker.SetActive(false);
         }
+        else if(DialogueSystem.Instance.currentDialogue.Speaker == " ")
+        {
+            OtherSpeaker.SetActive(false);
+            SelfSpeaker.SetActive(false);
+        }
         else
         {
             SelfSpeaker.GetComponentInChildren<TextMeshProUGUI>().text = DialogueSystem.Instance.currentDialogue.Speaker;
@@ -122,25 +127,49 @@ public class TypeWriterEffect : MonoBehaviour
 
     void CheckDialogue()
     {
-        if (DialogueSystem.Instance.CurrentDialogueID++ >= DialogueSystem.Instance.CurrentDialogueMax && !(DialogueSystem.Instance.currentDialogue.Choices.Count != 0))
+        if (DialogueSystem.Instance.CurrentDialogueID++ >= DialogueSystem.Instance.CurrentDialogueMax-1 && !(DialogueSystem.Instance.currentDialogue.Choices.Count != 0))
         {
             Finished = false;
             CharNum = 0;
             InUse = false;
             UIPanel.SetActive(false);
             Time.timeScale = 1;
+
+            if(DialogueSystem.Instance.currentDialogue.LoadSceneAfter != "")
+            {
+                FindObjectOfType<LoadScene>().LoadNewScene(DialogueSystem.Instance.currentDialogue.LoadSceneAfter);
+            }
+
         }
         else if(DialogueSystem.Instance.currentDialogue.Choices.Count != 0)
         {
-            DialogueSystem.Instance.SetChoices();
+            if (!DialogueSystem.Instance.ChoicePanel.activeInHierarchy)
+            {
+                DialogueSystem.Instance.SetChoices();
+            }
         }
         else
         {
-            Finished = false;
-            CharNum = 0;
-            timer = 0;
-
-            DialogueSystem.Instance.updateDialogue(CurrentCutsceneID);
+            NextDialogue();
         }
+    }
+
+    public void NextDialogue()
+    {
+        Finished = false;
+        CharNum = 0;
+        timer = 0;
+
+        if (DialogueSystem.Instance.currentDialogue.ChangeImage)
+        {
+            GetComponent<ImageHolder>().ChangeImage();
+
+            if(GetComponent<ImageHolder>().inactive)
+            {
+                GetComponent<ImageHolder>().Panel.SetActive(true);
+            }
+        }
+
+        DialogueSystem.Instance.updateDialogue(CurrentCutsceneID);
     }
 }

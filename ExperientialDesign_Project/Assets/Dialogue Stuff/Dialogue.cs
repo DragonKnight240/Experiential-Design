@@ -17,4 +17,6 @@ public class Dialogue : ScriptableObject
     public int LowValue;
     public bool Repeatable;
     public List<Choice> Choices;
+    public string LoadSceneAfter;
+    public bool ChangeImage;
 }

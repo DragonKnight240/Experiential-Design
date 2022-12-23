@@ -7,7 +7,7 @@ public class ChoiceButton : MonoBehaviour
     public Choice choice;
     internal Character NPCTalkingTo;
 
-    void OnChoose()
+    public void OnChoose()
     {
         if(choice.ItemRecieved != null)
         {

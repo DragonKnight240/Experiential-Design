@@ -22,3 +22,4 @@ MonoBehaviour:
   LowValue: 0
   Repeatable: 0
   Choices: []
+  LoadSceneAfter: Town

@@ -108,7 +108,7 @@ public class DialogueSystem : MonoBehaviour
                 }
             case DialogueTreeTypes.None:
                 {
-                    CurrentTreeType = DialogueTreeTypes.None;
+                    CurrentTreeStat = DialogueTree.Neutral;
                     break;
                 }
         }
@@ -116,9 +116,11 @@ public class DialogueSystem : MonoBehaviour
 
     public void SetChoices()
     {
-        foreach(Choice Choice in currentDialogue.Choices)
+        GameObject NewChoice;
+
+        foreach (Choice Choice in currentDialogue.Choices)
         {
-            GameObject NewChoice = Instantiate(ChoiceButtonPrefab, ChoicePanel.transform.GetChild(0).transform);
+            NewChoice = Instantiate(ChoiceButtonPrefab, ChoicePanel.transform);
             NewChoice.GetComponent<ChoiceButton>().choice = Choice;
             NewChoice.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Choice.Description;
             NewChoice.GetComponent<ChoiceButton>().NPCTalkingTo = CurrentNPC;
@@ -131,9 +133,11 @@ public class DialogueSystem : MonoBehaviour
     {
         ChoicePanel.SetActive(false);
 
-        for (int i = 0; i < ChoicePanel.transform.GetChild(0).childCount; i++)
+        foreach (Transform Child in ChoicePanel.transform)
         {
-            Destroy(ChoicePanel.transform.GetChild(0).GetChild(i));
+            Destroy(Child.gameObject);
         }
+
+        DialogueSystem.Instance.TWEffect.NextDialogue();
     }
 }

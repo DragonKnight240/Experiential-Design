@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7399471b1bc7b9346ba63daa3fd1b1b5, type: 3}
   m_Name: Water Bucket
   m_EditorClassIdentifier: 
-  Description: 
-  WantedItem: {fileID: 0}
+  Description: Find a source of water to fill the bucket up. There is a well just
+    north but also a lake outside but the guard won't let you pass.
+  WantedItem: {fileID: 11400000, guid: 96d643cca776b7c4a8bc4a17c1b8b173, type: 2}
   RewardItem: {fileID: 0}
-  RewardMoney: 0
+  RewardMoney: 3

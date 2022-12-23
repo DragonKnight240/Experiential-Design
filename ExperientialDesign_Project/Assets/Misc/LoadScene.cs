@@ -44,7 +44,6 @@ public class LoadScene : MonoBehaviour
 
     public void LoadNewScene(string newScene)
     {
-        print("Click");
         SceneToLoad = newScene;
         StartCoroutine(LoadAsync());
     }
