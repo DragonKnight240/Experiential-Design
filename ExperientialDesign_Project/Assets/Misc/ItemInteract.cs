@@ -6,6 +6,7 @@ public class ItemInteract : Interactable
 {
     public Item ItemPickup;
     public Item RemoveItem;
+    public bool HideOnInteract;
 
     public override void interactWith()
     {
@@ -13,6 +14,7 @@ public class ItemInteract : Interactable
         {
             if(!Inventory.Instance.isInInventory(RemoveItem))
             {
+                print("Return");
                 return;
             }
         }
@@ -20,6 +22,12 @@ public class ItemInteract : Interactable
         if (CanInteract)
         {
             Inventory.Instance.AddToInventory(ItemPickup);
+
+            if(HideOnInteract)
+            {
+                //fade
+                gameObject.SetActive(false);
+            }
         }
     }
 }

@@ -13,6 +13,10 @@ public class Inventory : MonoBehaviour
     public GameObject DescriptionPanel;
     public TextMeshProUGUI DescriptionText;
     public Dictionary<Item, GameObject> ItemDictionary;
+    public GameObject MoneyUI;
+    public TextMeshProUGUI MoneyDisplay;
+    float MoneyTimer = 0;
+    public float MoneyMax = 5;
 
     static internal Inventory Instance;
 
@@ -39,10 +43,28 @@ public class Inventory : MonoBehaviour
         {
             ToggleInventory();
         }
+
+        if(MoneyUI.activeInHierarchy)
+        {
+            MoneyTimer += Time.unscaledDeltaTime;
+
+            if(MoneyTimer >= MoneyMax)
+            {
+                MoneyUI.SetActive(false);
+                MoneyTimer = 0;
+            }
+        }
+    }
+
+    public void ChangeMoney()
+    {
+        MoneyDisplay.text = GameManager.Instance_.GetMoney().ToString();
+        MoneyUI.gameObject.SetActive(true);
     }
 
     public void AddToInventory(Item newItem)
     {
+        print("Add to inventory");
         Transform NewPosition = InventoryPanel.transform.GetChild(0);
         GameObject NewSection = Instantiate(ItemSectionPrefab, NewPosition.transform);
         float Width = ItemSectionPrefab.GetComponent<RectTransform>().sizeDelta.y;
@@ -76,11 +98,13 @@ public class Inventory : MonoBehaviour
             Time.timeScale = 0;
             DescriptionPanel.SetActive(false);
             InventoryPanel.SetActive(true);
+            MoneyUI.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
             InventoryPanel.SetActive(false);
+            MoneyUI.SetActive(false);
         }
     }
 

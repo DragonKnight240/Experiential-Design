@@ -21,7 +21,7 @@ public class OnDialogueGameObject : OnDialogueLine
         if(HasFaded && !fade.fadeBoth)
         {
             HasFaded = false;
-            GameObject.SetActive(active);
+            //GameObject.SetActive(active);
         }
     }
 
@@ -29,7 +29,8 @@ public class OnDialogueGameObject : OnDialogueLine
     {
         active = Active;
         HasFaded = true;
-        FindObjectOfType<Fade>().fadeOut = true;
-        FindObjectOfType<Fade>().fadeBoth = true;
+        //FindObjectOfType<Fade>().fadeOut = true;
+        //FindObjectOfType<Fade>().fadeBoth = true;
+        GameObject.SetActive(active);
     }
 }

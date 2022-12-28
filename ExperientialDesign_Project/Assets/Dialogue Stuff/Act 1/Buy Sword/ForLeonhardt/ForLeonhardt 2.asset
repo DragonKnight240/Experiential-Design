@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
-  m_Name: HandOverDia
+  m_Name: ForLeonhardt 2
   m_EditorClassIdentifier: 
   Type: 3
-  Speaker: Boy #1
-  Script: You aren't so bad! Bye!
+  Speaker: Blacksmith
+  Script: Now anyone with eyes could see that. So why do you really want that sword?
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 
   LowValue: 0
   Repeatable: 0
-  Choices: []
+  Choices:
+  - {fileID: 11400000, guid: 6d320c87e04c13c489a8ba2019855beb, type: 2}
+  - {fileID: 11400000, guid: f052916481b08524aae73e9538f05799, type: 2}
   LoadSceneAfter: 
   ChangeImage: 0

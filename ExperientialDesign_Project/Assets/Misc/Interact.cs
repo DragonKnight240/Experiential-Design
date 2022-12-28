@@ -23,11 +23,11 @@ public class Interact : MonoBehaviour
 
             if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out Hit))
             {
-                if(Hit.transform.CompareTag("Character"))
+                if (Hit.transform.CompareTag("Character"))
                 {
                     Hit.transform.GetComponent<Character>().InteractWith();
                 }
-                else if(Hit.transform.CompareTag("Interactable"))
+                else if (Hit.transform.CompareTag("Interactable"))
                 {
                     Hit.transform.GetComponent<Interactable>().interactWith();
                 }

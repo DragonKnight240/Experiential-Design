@@ -45,10 +45,12 @@ public class GameManager : MonoBehaviour
     public void increaseMoney(int amount)
     {
         Money += amount;
+        Inventory.Instance.ChangeMoney();
     }
 
     public void decreaseMoney(int amount)
     {
         Money -= amount;
+        Inventory.Instance.ChangeMoney();
     }
 }

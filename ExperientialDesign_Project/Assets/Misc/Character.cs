@@ -48,6 +48,7 @@ public class Character : MonoBehaviour
             {
                 CutsceneID = DefaultCutsceneID;
                 PlayDialogue();
+                QuestGiven = true;
             }
         }
         else
@@ -91,7 +92,10 @@ public class Character : MonoBehaviour
 
     public void QuestCompleted()
     {
-        GameManager.Instance_.increaseMoney(GivenQuest.RewardMoney);
+        if (GivenQuest.RewardMoney != 0)
+        {
+            GameManager.Instance_.increaseMoney(GivenQuest.RewardMoney);
+        }
 
         if (GivenQuest.RewardItem)
         {

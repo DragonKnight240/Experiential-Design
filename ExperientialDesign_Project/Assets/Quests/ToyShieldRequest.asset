@@ -16,6 +16,6 @@ MonoBehaviour:
     of town.
   WantedItem: {fileID: 11400000, guid: 7753d4f63af55aa4b8e3bc5ddcf125c3, type: 2}
   RewardItem: {fileID: 0}
-  RewardMoney: 1
+  RewardMoney: 0
   CompleteDialogueID: 28
   IncompleteID: 27

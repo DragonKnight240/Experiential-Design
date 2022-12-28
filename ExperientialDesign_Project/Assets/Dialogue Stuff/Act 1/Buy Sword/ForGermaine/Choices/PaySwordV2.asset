@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ab1792abe31a494cbc60717219d71fe, type: 3}
-  m_Name: (Lie)WellOutOfWater
+  m_Name: PaySwordV2
   m_EditorClassIdentifier: 
-  Description: (Lie) Well is out of water
+  Description: Pay 5 Gold
   KarmaImpact: 0
   CharacterImpact: 0
-  ItemRecieved: {fileID: 0}
+  ItemRecieved: {fileID: 11400000, guid: 6bd01f0a426f4f04eaebeb075d722446, type: 2}
   ItemTaken: {fileID: 0}
   MoneyRecieved: 0
-  MoneyTaken: 0
-  NewDialogueID: 1
+  MoneyTaken: 5
+  NewDialogueID: 40
