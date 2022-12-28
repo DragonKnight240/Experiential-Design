@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elluka 1
   m_EditorClassIdentifier: 
-  Speaker: Rin
-  Script: SSHHH!
+  Type: 2
+  Speaker: Allen
+  Script: Hush.
+  ScriptHigh: Wait, I think thats...
+  HighValue: 0
+  ScriptLow: Stop.
+  LowValue: 0
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

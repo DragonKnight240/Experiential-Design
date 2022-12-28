@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
+    internal bool Active = true;
+
     private void Update()
     {
-        if(Input.GetKeyDown("Interact"))
+        if(DialogueSystem.Instance.TWEffect.UIPanel.activeInHierarchy || Inventory.Instance.InventoryPanel.activeInHierarchy)
+        {
+            Active = false;
+        }
+        else
+        {
+            Active = true;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Mouse0) && Active)
         {
             RaycastHit Hit;
 
@@ -21,6 +32,8 @@ public class Interact : MonoBehaviour
                     Hit.transform.GetComponent<Interactable>().interactWith();
                 }
             }
+
+            print(Hit.collider.gameObject.name);
         }
     }
 }

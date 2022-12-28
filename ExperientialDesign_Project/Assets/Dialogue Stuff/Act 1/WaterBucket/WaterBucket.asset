@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
+  m_Name: WaterBucket
+  m_EditorClassIdentifier: 
+  Type: 0
+  Speaker: Young Mother
+  Script: Ah, you are Sir Leonhardt's new son! Surely you must be like him and young
+    Germaine. Wonderful!
+  ScriptHigh: Ah, you must be Sir Leonhardt's new son! I've heard so much about you.
+  HighValue: 3
+  ScriptLow: Oh, you are Sir Leonhardt's new problem...
+  LowValue: -3
+  Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

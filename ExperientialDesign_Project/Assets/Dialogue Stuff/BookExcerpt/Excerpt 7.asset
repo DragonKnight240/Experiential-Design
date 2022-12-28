@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Excerpt 7
   m_EditorClassIdentifier: 
-  Type: 2
-  Speaker: 
+  Type: 3
+  Speaker: None
   Script: The melancholy boy is the son of a king. Hiding himself as the adopted
     son of a hero
   ScriptHigh: 
@@ -23,3 +23,4 @@ MonoBehaviour:
   Repeatable: 0
   Choices: []
   LoadSceneAfter: 
+  ChangeImage: 0

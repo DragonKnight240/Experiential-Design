@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elluka 2
   m_EditorClassIdentifier: 
+  Type: 3
   Speaker: Elluka
   Script: Held! Held! Get up! Get up! Stop ignoring me I know you can hear me!
+  ScriptHigh: 
+  HighValue: 0
+  ScriptLow: 
+  LowValue: 0
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elpha6
   m_EditorClassIdentifier: 
-  Speaker: Rin
-  Script: Oh no- no not at all I um have always lived in Lucifenia - the capital
+  Type: 2
+  Speaker: Allen
+  Script: No I lived in the capital.
+  ScriptHigh: Oh no- no not at all I um have always lived in Lucifenia - the capital
     actually.
+  HighValue: 0
+  ScriptLow: It's not your concern.
+  LowValue: 0
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

@@ -9,6 +9,7 @@ TagManager:
   - PatrolLocation
   - Enemy
   - Interactable
+  - Character
   layers:
   - Default
   - TransparentFX

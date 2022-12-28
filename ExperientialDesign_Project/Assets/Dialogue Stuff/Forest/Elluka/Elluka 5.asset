@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elluka 5
   m_EditorClassIdentifier: 
+  Type: 3
   Speaker: Elluka
-  Script: You can bring him back! You have to, I can't no again. And now the Princess
-    too and the Prince he acts off.
+  Script: You can bring him back! You have to, I can't not again. And now the Prince
+    too and the Princess she acts off.
+  ScriptHigh: 
+  HighValue: 0
+  ScriptLow: 
+  LowValue: 0
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

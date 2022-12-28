@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance_;
     int Karma = 0;
     int Money = 0;
+    internal int GermaineOpinion = 0;
 
     // Start is called before the first frame update
     void Start()

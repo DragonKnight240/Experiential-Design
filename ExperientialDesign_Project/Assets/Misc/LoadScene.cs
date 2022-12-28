@@ -7,6 +7,7 @@ public class LoadScene : MonoBehaviour
 {
     public string SceneToLoad;
     Fade Fade;
+    public Character Germaine;
 
     private void Start()
     {
@@ -16,6 +17,11 @@ public class LoadScene : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //SceneManager.LoadScene(SceneToLoad);
+
+        if (Germaine)
+        {
+            GameManager.Instance_.GermaineOpinion = Germaine.GetOpinionOfPlayer();
+        }
 
         Time.timeScale = 0;
         Fade.fadeOut = true;

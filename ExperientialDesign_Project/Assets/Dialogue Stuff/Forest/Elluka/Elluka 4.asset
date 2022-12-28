@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elluka 4
   m_EditorClassIdentifier: 
+  Type: 3
   Speaker: Elluka
   Script: You must be able to do something! You're a god! Surely if anyone can save
     him you can!
+  ScriptHigh: 
+  HighValue: 0
+  ScriptLow: 
+  LowValue: 0
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

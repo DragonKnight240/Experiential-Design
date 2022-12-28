@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elpha3
   m_EditorClassIdentifier: 
-  Speaker: Rin
-  Script: Yes. They aren't pleasant to outsiders like Lucifenia is. Fa- eh King Arth's
-    expansion war has made it normal to see people of other races.
+  Type: 2
+  Speaker: Allen
+  Script: 'Yes. They aren''t pleasant to outsiders like Lucifenia is. '
+  ScriptHigh: Yes. They aren't pleasant to outsiders like Lucifenia is. Fa- eh King
+    Arth's expansion war has made it normal to see people of other races.
+  HighValue: 2
+  ScriptLow: It's too far in to be used for the base.
+  LowValue: -5
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

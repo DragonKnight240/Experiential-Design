@@ -10,4 +10,6 @@ public class Quest : ScriptableObject
     public Item WantedItem;
     public Item RewardItem;
     public int RewardMoney;
+    public int CompleteDialogueID;
+    public int IncompleteID;
 }

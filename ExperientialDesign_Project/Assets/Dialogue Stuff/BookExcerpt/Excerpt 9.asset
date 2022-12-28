@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Excerpt 9
   m_EditorClassIdentifier: 
-  Type: 2
-  Speaker: 
+  Type: 3
+  Speaker: None
   Script: Even when the girl tried to be friendly with him, the boy didn't answer.
   ScriptHigh: 
   HighValue: 0
@@ -22,3 +22,4 @@ MonoBehaviour:
   Repeatable: 0
   Choices: []
   LoadSceneAfter: 
+  ChangeImage: 0

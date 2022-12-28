@@ -25,6 +25,7 @@ public class DialogueSystem : MonoBehaviour
     {
         Karma,
         CharacterOpinion,
+        PlayerOpinion,
         None
     }
 
@@ -41,6 +42,7 @@ public class DialogueSystem : MonoBehaviour
     DialogueTreeTypes CurrentTreeType;
     internal TypeWriterEffect TWEffect;
     internal Character CurrentNPC;
+    internal Choice LastChoosen;
 
     private void Start()
     {
@@ -58,10 +60,10 @@ public class DialogueSystem : MonoBehaviour
 
     public void updateDialogue(int cutsceneID, Character NPC = null)
     {
+        currentCutsceneID = cutsceneID;
         CurrentTreeType = Cutscenes[currentCutsceneID].script[CurrentDialogueID].Type;
         CurrentNPC = NPC;
         WhichTreeToFollow(cutsceneID, NPC);
-        currentCutsceneID = cutsceneID;
 
         currentDialogue = Cutscenes[currentCutsceneID].script[CurrentDialogueID];
 
@@ -96,6 +98,23 @@ public class DialogueSystem : MonoBehaviour
                         CurrentTreeStat = DialogueTree.Low;
                     }
                     else if (Cutscenes[cutsceneID].script[CurrentDialogueID].HighValue < NPC.GetOpinionOfPlayer())
+                    {
+                        CurrentTreeStat = DialogueTree.High;
+                    }
+                    else
+                    {
+                        CurrentTreeStat = DialogueTree.Neutral;
+                    }
+
+                    break;
+                }
+            case DialogueTreeTypes.PlayerOpinion:
+                {
+                    if (Cutscenes[currentCutsceneID].script[CurrentDialogueID].LowValue > NPC.GetPlayerOpinion())
+                    {
+                        CurrentTreeStat = DialogueTree.Low;
+                    }
+                    else if(Cutscenes[currentCutsceneID].script[CurrentDialogueID].HighValue < NPC.GetPlayerOpinion())
                     {
                         CurrentTreeStat = DialogueTree.High;
                     }

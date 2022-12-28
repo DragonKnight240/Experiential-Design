@@ -745,6 +745,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1672176269196302578, guid: 2561bde4faa079b43b0f6873ea73fdf8, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672176269196302578, guid: 2561bde4faa079b43b0f6873ea73fdf8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672176269560844178, guid: 2561bde4faa079b43b0f6873ea73fdf8, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672176269560844178, guid: 2561bde4faa079b43b0f6873ea73fdf8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672176270924697112, guid: 2561bde4faa079b43b0f6873ea73fdf8, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672176270924697112, guid: 2561bde4faa079b43b0f6873ea73fdf8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2911478853815992833, guid: 2561bde4faa079b43b0f6873ea73fdf8, type: 3}
       propertyPath: Cutscenes.Array.data[0].script.Array.data[0]
       value: 

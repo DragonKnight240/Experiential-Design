@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elpha1
   m_EditorClassIdentifier: 
-  Speaker: Rin
-  Script: If we keep going this way we will reach the kingdom of Elphagore
+  Type: 2
+  Speaker: Allen
+  Script: If we keep going this way we will reach the kingdom of Elphegort
+  ScriptHigh: Elphegort is that way, it's too far for the bandit base to be.
+  HighValue: 2
+  ScriptLow: We don't want to go that way
+  LowValue: -5
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

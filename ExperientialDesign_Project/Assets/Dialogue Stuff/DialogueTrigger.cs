@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public int cutsceneID;
-    public DialogueSystem.DialogueTreeTypes Type;
+    public Character NPC;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class DialogueTrigger : MonoBehaviour
             DialogueSystem.Instance.CurrentDialogueMax = DialogueSystem.Instance.Cutscenes[cutsceneID].script.Count;
             DialogueSystem.Instance.CurrentDialogueID = 0;
             DialogueSystem.Instance.TWEffect.CurrentCutsceneID = cutsceneID;
-            DialogueSystem.Instance.updateDialogue(cutsceneID);
+            DialogueSystem.Instance.updateDialogue(cutsceneID, NPC);
         }
     }
 }

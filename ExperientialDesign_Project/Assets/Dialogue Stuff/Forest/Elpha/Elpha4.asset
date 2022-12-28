@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elpha4
   m_EditorClassIdentifier: 
-  Speaker: Rin
-  Script: Like you and Sir Leonhardt are obviously of Belezeeian das- des- of birth
-    wise  and I of Lucifenian.
+  Type: 2
+  Speaker: Allen
+  Script: You both aren't from Lucifenia.
+  ScriptHigh: Like you and Sir Leonhardt are obviously of Belezeeian das- des- of
+    birth wise  and I of Lucifenian.
+  HighValue: 2
+  ScriptLow: It leds to another kingdom.
+  LowValue: -5
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

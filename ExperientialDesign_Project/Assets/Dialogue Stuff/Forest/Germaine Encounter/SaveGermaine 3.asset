@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: SaveGermaine 3
   m_EditorClassIdentifier: 
+  Type: 3
   Speaker: Bandit
   Script: Who? Oh you must mean the redhead! She's being held in a secure location.
+  ScriptHigh: 
+  HighValue: 0
+  ScriptLow: 
+  LowValue: 0
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

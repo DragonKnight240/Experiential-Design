@@ -15,7 +15,7 @@ public class TypeWriterEffect : MonoBehaviour
     string dialogue = "";
     int CharNum = 0;
     int CharNumMax;
-    bool InUse = false;
+    internal bool InUse = false;
     internal int CurrentCutsceneID;
     public GameObject SelfSpeaker;
     public GameObject OtherSpeaker;
@@ -64,22 +64,22 @@ public class TypeWriterEffect : MonoBehaviour
                 break;
         }
 
-        if(DialogueSystem.Instance.currentDialogue.Speaker != "Rin" || DialogueSystem.Instance.currentDialogue.Speaker != "Allen")
+        if(DialogueSystem.Instance.currentDialogue.Speaker.Contains("Rin") || DialogueSystem.Instance.currentDialogue.Speaker.Contains("Allen"))
         {
-            OtherSpeaker.GetComponentInChildren<TextMeshProUGUI>().text = DialogueSystem.Instance.currentDialogue.Speaker;
-            OtherSpeaker.SetActive(true);
-            SelfSpeaker.SetActive(false);
+            SelfSpeaker.GetComponentInChildren<TextMeshProUGUI>().text = DialogueSystem.Instance.currentDialogue.Speaker;
+            OtherSpeaker.SetActive(false);
+            SelfSpeaker.SetActive(true);
         }
-        else if(DialogueSystem.Instance.currentDialogue.Speaker == " ")
+        else if(DialogueSystem.Instance.currentDialogue.Speaker.Contains("None"))
         {
             OtherSpeaker.SetActive(false);
             SelfSpeaker.SetActive(false);
         }
         else
         {
-            SelfSpeaker.GetComponentInChildren<TextMeshProUGUI>().text = DialogueSystem.Instance.currentDialogue.Speaker;
-            OtherSpeaker.SetActive(false);
-            SelfSpeaker.SetActive(true);
+            OtherSpeaker.GetComponentInChildren<TextMeshProUGUI>().text = DialogueSystem.Instance.currentDialogue.Speaker;
+            OtherSpeaker.SetActive(true);
+            SelfSpeaker.SetActive(false);
         }
 
         CharNumMax = dialogue.Length;
@@ -129,11 +129,7 @@ public class TypeWriterEffect : MonoBehaviour
     {
         if (DialogueSystem.Instance.CurrentDialogueID++ >= DialogueSystem.Instance.CurrentDialogueMax-1 && !(DialogueSystem.Instance.currentDialogue.Choices.Count != 0))
         {
-            Finished = false;
-            CharNum = 0;
-            InUse = false;
-            UIPanel.SetActive(false);
-            Time.timeScale = 1;
+            EndDialogue();
 
             if(DialogueSystem.Instance.currentDialogue.LoadSceneAfter != "")
             {
@@ -170,6 +166,15 @@ public class TypeWriterEffect : MonoBehaviour
             }
         }
 
-        DialogueSystem.Instance.updateDialogue(CurrentCutsceneID);
+        DialogueSystem.Instance.updateDialogue(CurrentCutsceneID, DialogueSystem.Instance.CurrentNPC);
+    }
+
+    public void EndDialogue()
+    {
+        Finished = false;
+        CharNum = 0;
+        InUse = false;
+        UIPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }

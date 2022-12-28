@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elluka 7
   m_EditorClassIdentifier: 
+  Type: 3
   Speaker: Germaine
-  Script: Who was that? She mentioned the Prince and Princess so could she be the
-    court mage? I think I remember dad talking about her.
+  Script: She looked like a mage but the only one I can think of is Lucifenia Trinity
+    one. Luka?
+  ScriptHigh: 
+  HighValue: 0
+  ScriptLow: 
+  LowValue: 0
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

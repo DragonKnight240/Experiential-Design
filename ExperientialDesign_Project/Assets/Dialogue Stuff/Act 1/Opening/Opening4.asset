@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Opening4
   m_EditorClassIdentifier: 
-  Type: 2
+  Type: 3
   Speaker: Germaine
   Script: That has nothing to do with it! It'll be fine, if you're with me, I'm sure
     we could get away.
@@ -24,3 +24,5 @@ MonoBehaviour:
   Choices:
   - {fileID: 11400000, guid: de78538de3fcd3345a6c02c4fde28a64, type: 2}
   - {fileID: 11400000, guid: f1aa6f18850c862418eafc1a337bc83a, type: 2}
+  LoadSceneAfter: 
+  ChangeImage: 0

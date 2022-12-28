@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class ItemSection : MonoBehaviour
+public class ItemSection : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     Inventory Inventory;
     internal Item item;
@@ -17,19 +18,19 @@ public class ItemSection : MonoBehaviour
 
     private void Update()
     {
-        if(ItemNameText.text != item.name)
+        if(ItemNameText.text != item.Name)
         {
-            ItemNameText.text = item.name;
+            ItemNameText.text = item.Name;
         }
     }
 
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         Inventory.DescriptionText.text = item.Description;
         Inventory.DescriptionPanel.SetActive(true);
     }
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
         Inventory.DescriptionPanel.SetActive(false);
     }

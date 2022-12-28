@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneID: 0
+  NPC: {fileID: 0}
 --- !u!114 &121951009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +470,10 @@ PrefabInstance:
     - target: {fileID: 1672176269210486381, guid: 388c5ddd44f87664a821117a8d46feee, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611054228462594747, guid: 388c5ddd44f87664a821117a8d46feee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 388c5ddd44f87664a821117a8d46feee, type: 3}

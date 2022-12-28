@@ -738,6 +738,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4547888803360037013, guid: 388c5ddd44f87664a821117a8d46feee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733952306661296442, guid: 388c5ddd44f87664a821117a8d46feee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.0743408
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144693457726971125, guid: 388c5ddd44f87664a821117a8d46feee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144693457946907383, guid: 388c5ddd44f87664a821117a8d46feee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8662386445106120217, guid: 388c5ddd44f87664a821117a8d46feee, type: 3}
       propertyPath: Cutscenes.Array.size
       value: 2

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Excerpt 28
   m_EditorClassIdentifier: 
-  Type: 2
+  Type: 3
   Speaker: Germaine
   Script: Somebody tell me, I want you to tell me
   ScriptHigh: 
@@ -22,3 +22,4 @@ MonoBehaviour:
   Repeatable: 0
   Choices: []
   LoadSceneAfter: 
+  ChangeImage: 0

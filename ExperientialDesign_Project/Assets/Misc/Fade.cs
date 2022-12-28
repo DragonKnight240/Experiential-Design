@@ -10,6 +10,7 @@ public class Fade : MonoBehaviour
     public bool StartWithFadeIn = false;
     internal bool fadeIn = false;
     internal bool fadeOut = false;
+    internal bool fadeBoth = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +29,19 @@ public class Fade : MonoBehaviour
         {
             FadingObject.color = new Color(FadingObject.color.r, FadingObject.color.g, FadingObject.color.b, FadingObject.color.a - (FadeRate * Time.unscaledDeltaTime));
 
-            if(FadingObject.color.a <= 0)
+            if (FadingObject.color.a <= 0)
             {
                 fadeIn = false;
-                Time.timeScale = 1;
+
+                if (fadeBoth)
+                {
+                    fadeOut = true;
+                    fadeBoth = false;
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                }
             }
         }
 
@@ -42,7 +52,16 @@ public class Fade : MonoBehaviour
             if (FadingObject.color.a >= 1)
             {
                 fadeOut = false;
-                Time.timeScale = 1;
+
+                if(fadeBoth)
+                {
+                    fadeIn = true;
+                    fadeBoth = false;
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                }
             }
         }
     }

@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elluka 9
   m_EditorClassIdentifier: 
-  Speaker: Rin
-  Script: Let's go there's nothing for us here.
+  Type: 2
+  Speaker: Allen
+  Script: Let's go before she sees us.
+  ScriptHigh: She's friends with Sir Leonhardt we need to go if she sees us she'll
+    take us back.
+  HighValue: 0
+  ScriptLow: Let's go there's nothing for us here.
+  LowValue: 0
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

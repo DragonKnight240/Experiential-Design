@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: SaveGermaine 4
   m_EditorClassIdentifier: 
+  Type: 3
   Speaker: Bandit
   Script: But enough of this chit chat we can't allow you to leave here. Goodbye!
+  ScriptHigh: 
+  HighValue: 0
+  ScriptLow: 
+  LowValue: 0
   Repeatable: 0
+  Choices:
+  - {fileID: 11400000, guid: fd5fcf09be8f46d4081b24fd7f8470c5, type: 2}
+  - {fileID: 11400000, guid: d6dd1107c900505458b03a87bc7be49b, type: 2}
+  LoadSceneAfter: 
+  ChangeImage: 0

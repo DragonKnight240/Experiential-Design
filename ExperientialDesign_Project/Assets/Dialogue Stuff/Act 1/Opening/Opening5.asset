@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Opening5
   m_EditorClassIdentifier: 
-  Type: 2
+  Type: 3
   Speaker: Germaine
   Script: 'Do you remember? '
   ScriptHigh: 
@@ -21,3 +21,5 @@ MonoBehaviour:
   LowValue: 0
   Repeatable: 0
   Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

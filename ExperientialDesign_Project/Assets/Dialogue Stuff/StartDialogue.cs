@@ -5,6 +5,7 @@ using UnityEngine;
 public class StartDialogue : MonoBehaviour
 {
     public int cutsceneID = 0;
+    public Character NPC;
 
     private void Update()
     {
@@ -21,6 +22,6 @@ public class StartDialogue : MonoBehaviour
         DialogueSystem.Instance.CurrentDialogueMax = DialogueSystem.Instance.Cutscenes[cutsceneID].script.Count;
         DialogueSystem.Instance.CurrentDialogueID = 0;
         DialogueSystem.Instance.TWEffect.CurrentCutsceneID = cutsceneID;
-        DialogueSystem.Instance.updateDialogue(cutsceneID);
+        DialogueSystem.Instance.updateDialogue(cutsceneID, NPC);
     }
 }

@@ -5,9 +5,21 @@ using UnityEngine;
 public class ItemInteract : Interactable
 {
     public Item ItemPickup;
+    public Item RemoveItem;
 
     public override void interactWith()
     {
-        Inventory.Instance.AddToInventory(ItemPickup);
+        if(RemoveItem)
+        {
+            if(!Inventory.Instance.isInInventory(RemoveItem))
+            {
+                return;
+            }
+        }
+
+        if (CanInteract)
+        {
+            Inventory.Instance.AddToInventory(ItemPickup);
+        }
     }
 }

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
+  m_Name: Payment
+  m_EditorClassIdentifier: 
+  Type: 0
+  Speaker: Man at Gate
+  Script: I could probably forget you as well for 15 gold.
+  ScriptHigh: You know Germaine might have come this way, I might remember and let
+    you through for 15 gold.
+  HighValue: 4
+  ScriptLow: 15 Gold.
+  LowValue: -2
+  Repeatable: 0
+  Choices:
+  - {fileID: 11400000, guid: 141188dc3f733c0499c9024594a5b656, type: 2}
+  - {fileID: 11400000, guid: 6e03c675840e734499cc4496513b513f, type: 2}
+  LoadSceneAfter: 
+  ChangeImage: 0

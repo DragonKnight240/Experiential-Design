@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("Inventory"))
+        if(Input.GetKeyDown(KeyCode.I))
         {
             ToggleInventory();
         }
@@ -47,7 +47,7 @@ public class Inventory : MonoBehaviour
         GameObject NewSection = Instantiate(ItemSectionPrefab, NewPosition.transform);
         float Width = ItemSectionPrefab.GetComponent<RectTransform>().sizeDelta.y;
         NewSection.transform.position = new Vector3(NewPosition.transform.position.x, NewPosition.transform.position.y - (Width * (ItemDictionary.Count - 1)) - YOffset, NewPosition.transform.position.z);
-        NewSection.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = newItem.Name;
+        NewSection.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newItem.Name;
         ItemDictionary.Add(newItem, NewSection);
         NewSection.GetComponent<ItemSection>().item = newItem;
     }
@@ -73,12 +73,19 @@ public class Inventory : MonoBehaviour
     {
         if (!InventoryPanel.activeInHierarchy)
         {
+            Time.timeScale = 0;
             DescriptionPanel.SetActive(false);
             InventoryPanel.SetActive(true);
         }
         else
         {
+            Time.timeScale = 1;
             InventoryPanel.SetActive(false);
         }
+    }
+
+    public bool isInInventory(Item checkItem)
+    {
+        return ItemDictionary.ContainsKey(checkItem);
     }
 }

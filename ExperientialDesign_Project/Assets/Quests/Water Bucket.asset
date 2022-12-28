@@ -16,4 +16,6 @@ MonoBehaviour:
     north but also a lake outside but the guard won't let you pass.
   WantedItem: {fileID: 11400000, guid: 96d643cca776b7c4a8bc4a17c1b8b173, type: 2}
   RewardItem: {fileID: 0}
-  RewardMoney: 3
+  RewardMoney: 4
+  CompleteDialogueID: 13
+  IncompleteID: 12

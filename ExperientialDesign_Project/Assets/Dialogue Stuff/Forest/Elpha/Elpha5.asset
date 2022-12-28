@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Elpha5
   m_EditorClassIdentifier: 
+  Type: 2
   Speaker: Germaine
-  Script: You know, you know a lot about Elphagore, is that where you used to live
+  Script: You know, you know a lot about Elphagort, is that where you used to live
     um you know before?
+  ScriptHigh: You know, you know a lot about Elphagort, is that where you used to
+    live um you know before?
+  HighValue: 2
+  ScriptLow: Is that where you used to live um you know before?
+  LowValue: -5
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

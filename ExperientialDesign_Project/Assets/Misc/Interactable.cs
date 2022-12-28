@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+
+    public bool CanInteract = true;
     public virtual void interactWith()
     {
 
