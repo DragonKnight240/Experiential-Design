@@ -72,6 +72,11 @@ public class ChoiceButton : MonoBehaviour
             DialogueSystem.Instance.TWEffect.EndDialogue();
         }
 
+        if(choice.RemoveOnChoose)
+        {
+            DialogueSystem.Instance.Cutscenes[0].script[0].Choices.Remove(choice);
+        }
+
         DialogueSystem.Instance.LastChoosen = choice;
 
         DialogueSystem.Instance.Choosen();

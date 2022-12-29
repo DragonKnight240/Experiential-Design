@@ -8,6 +8,7 @@ public class MoneyInteract : Interactable
 
     public override void interactWith()
     {
+        CanInteract = false;
         GameManager.Instance_.increaseMoney(MoneyPickedUp);
     }
 }

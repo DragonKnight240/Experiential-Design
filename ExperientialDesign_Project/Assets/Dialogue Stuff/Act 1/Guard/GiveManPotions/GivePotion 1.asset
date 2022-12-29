@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
+  m_Name: GivePotion 1
+  m_EditorClassIdentifier: 
+  Type: 3
+  Speaker: Man At Gate
+  Script: Well... my back has been aching resently. I guess for a health potion I'll
+    move.
+  ScriptHigh: 
+  HighValue: 0
+  ScriptLow: 
+  LowValue: 0
+  Repeatable: 0
+  Choices:
+  - {fileID: 11400000, guid: 145de2097f3fad641997d1f423698c7b, type: 2}
+  LoadSceneAfter: 
+  ChangeImage: 0

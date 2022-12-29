@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 3
   Speaker: Man At Gate
-  Script: Out of water? That well can't be out of water, right? You wait here kid
-    I'll be back in a minute.
+  Script: Out of water? That well can't be out of water, right? Well just in case
+    I'll move back so you can access the lake. Don't want you leaving.
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 

@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
     public int CutsceneID;
     internal int DefaultCutsceneID;
     internal bool QuestGiven = false;
+    bool CanInteract = true;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,11 @@ public class Character : MonoBehaviour
 
     public void InteractWith()
     {
+        if(!CanInteract)
+        {
+            return;
+        }
+
         if (GivenQuest)
         {
             if (QuestGiven)
@@ -37,6 +43,7 @@ public class Character : MonoBehaviour
                     CutsceneID = GivenQuest.CompleteDialogueID;
                     PlayDialogue();
                     isQuestCompleted = true;
+                    
                 }
                 else
                 {
@@ -49,6 +56,7 @@ public class Character : MonoBehaviour
                 CutsceneID = DefaultCutsceneID;
                 PlayDialogue();
                 QuestGiven = true;
+                StartQuest();
             }
         }
         else
@@ -88,6 +96,19 @@ public class Character : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void StartQuest()
+    {
+        if(GivenQuest.GivenItem)
+        {
+            Inventory.Instance.AddToInventory(GivenQuest.GivenItem);
+        }
+
+        if (GivenQuest.AddedChoice)
+        {
+            DialogueSystem.Instance.Cutscenes[0].script[0].Choices.Add(GivenQuest.AddedChoice);
+        }
     }
 
     public void QuestCompleted()

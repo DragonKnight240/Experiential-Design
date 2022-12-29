@@ -28,7 +28,7 @@ public class OnDialogueGameObject : OnDialogueLine
     public override void CorrectDialoguePlaying(bool Active)
     {
         active = Active;
-        HasFaded = true;
+        //HasFaded = true;
         //FindObjectOfType<Fade>().fadeOut = true;
         //FindObjectOfType<Fade>().fadeBoth = true;
         GameObject.SetActive(active);

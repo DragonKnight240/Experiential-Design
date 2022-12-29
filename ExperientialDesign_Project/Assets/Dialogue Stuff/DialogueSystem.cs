@@ -159,4 +159,20 @@ public class DialogueSystem : MonoBehaviour
 
         DialogueSystem.Instance.TWEffect.NextDialogue();
     }
+
+    private void OnDestroy()
+    {
+        if(Cutscenes[0].script[0].Choices.Count > 2)
+        {
+            int Slot = 0;
+            foreach(Choice NewChoice in Cutscenes[0].script[0].Choices)
+            {
+                if(Slot > 1)
+                {
+                    Cutscenes[0].script[0].Choices.Remove(NewChoice);
+                }
+                Slot++;
+            }
+        }
+    }
 }

@@ -21,12 +21,30 @@ public class ItemInteract : Interactable
 
         if (CanInteract)
         {
+            if(RemoveItem)
+            {
+                if(Inventory.Instance.isInInventory(RemoveItem))
+                {
+                    Inventory.Instance.RemoveFromInventory(RemoveItem);
+                }
+                else
+                {
+                    return;
+                }
+            }
             Inventory.Instance.AddToInventory(ItemPickup);
 
             if(HideOnInteract)
             {
                 //fade
                 gameObject.SetActive(false);
+            }
+
+            CanInteract = false;
+
+            if(GetComponent<OnAddItem>())
+            {
+                GetComponent<OnAddItem>().OnAdd();
             }
         }
     }

@@ -17,6 +17,10 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI MoneyDisplay;
     float MoneyTimer = 0;
     public float MoneyMax = 5;
+    public GameObject NewItemUI;
+    public TextMeshProUGUI NewItemText;
+    float ItemTimer = 0;
+    public float ItemMax = 2;
 
     static internal Inventory Instance;
 
@@ -44,7 +48,7 @@ public class Inventory : MonoBehaviour
             ToggleInventory();
         }
 
-        if(MoneyUI.activeInHierarchy)
+        if(MoneyUI.activeInHierarchy && !InventoryPanel.activeInHierarchy)
         {
             MoneyTimer += Time.unscaledDeltaTime;
 
@@ -52,6 +56,17 @@ public class Inventory : MonoBehaviour
             {
                 MoneyUI.SetActive(false);
                 MoneyTimer = 0;
+            }
+        }
+
+        if(NewItemUI.activeInHierarchy)
+        {
+            ItemTimer += Time.unscaledDeltaTime;
+
+            if(ItemTimer >= ItemMax)
+            {
+                NewItemUI.SetActive(false);
+                ItemTimer = 0;
             }
         }
     }
@@ -64,11 +79,15 @@ public class Inventory : MonoBehaviour
 
     public void AddToInventory(Item newItem)
     {
-        print("Add to inventory");
+        NewItemText.text = newItem.Name;
+        NewItemUI.SetActive(true);
+
         Transform NewPosition = InventoryPanel.transform.GetChild(0);
         GameObject NewSection = Instantiate(ItemSectionPrefab, NewPosition.transform);
         float Width = ItemSectionPrefab.GetComponent<RectTransform>().sizeDelta.y;
-        NewSection.transform.position = new Vector3(NewPosition.transform.position.x, NewPosition.transform.position.y - (Width * (ItemDictionary.Count - 1)) - YOffset, NewPosition.transform.position.z);
+        float Height = InventoryPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x;
+
+        NewSection.transform.position = new Vector3(NewPosition.transform.position.x /*- (Height/2)*/, NewPosition.transform.position.y - (Width * (ItemDictionary.Count - 1)) - YOffset, NewPosition.transform.position.z);
         NewSection.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newItem.Name;
         ItemDictionary.Add(newItem, NewSection);
         NewSection.GetComponent<ItemSection>().item = newItem;
@@ -82,11 +101,12 @@ public class Inventory : MonoBehaviour
         Vector3 NewPosition = InventoryPanel.transform.GetChild(0).transform.position;
         NewPosition = new Vector3(NewPosition.x, 0, NewPosition.z);
         float Width = ItemSectionPrefab.GetComponent<RectTransform>().sizeDelta.y;
+        float Height = InventoryPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x;
         int DictionaryPairNo = 0;
 
         foreach (KeyValuePair<Item, GameObject> ItemPair in ItemDictionary)
         {
-            ItemPair.Value.transform.position = new Vector3(transform.position.x, transform.position.y - (DictionaryPairNo * Width) - YOffset, transform.position.z);
+            ItemPair.Value.transform.position = new Vector3(transform.position.x, transform.position.y /*-(Height / 2)*/ - (DictionaryPairNo * Width) - YOffset, transform.position.z);
             DictionaryPairNo++;
         }
     }

@@ -14,4 +14,5 @@ public class Choice : ScriptableObject
     public int MoneyRecieved;
     public int MoneyTaken;
     public int NewDialogueID = -1;
+    public bool RemoveOnChoose = false;
 }
