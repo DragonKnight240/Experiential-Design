@@ -20,6 +20,7 @@ public class TypeWriterEffect : MonoBehaviour
     public GameObject SelfSpeaker;
     public GameObject OtherSpeaker;
     public GameObject TextUIPanel;
+    public GameObject Mouse;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +87,7 @@ public class TypeWriterEffect : MonoBehaviour
         CharNum = 0;
         InUse = true;
         UIPanel.SetActive(true);
+        Mouse.SetActive(true);
     }
 
     void NextLetter()
@@ -166,7 +168,10 @@ public class TypeWriterEffect : MonoBehaviour
             }
         }
 
-        DialogueSystem.Instance.updateDialogue(CurrentCutsceneID, DialogueSystem.Instance.CurrentNPC);
+        if (DialogueSystem.Instance.TWEffect.CurrentCutsceneID != -1)
+        {
+            DialogueSystem.Instance.updateDialogue(CurrentCutsceneID, DialogueSystem.Instance.CurrentNPC);
+        }
     }
 
     public void EndDialogue()
@@ -175,6 +180,7 @@ public class TypeWriterEffect : MonoBehaviour
         CharNum = 0;
         InUse = false;
         UIPanel.SetActive(false);
+        Mouse.SetActive(false);
         Time.timeScale = 1;
     }
 }

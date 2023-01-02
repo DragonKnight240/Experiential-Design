@@ -5,7 +5,6 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public int StartingOpinion = 0;
-    internal int OpinionOfPlayer = 0;
     internal int PlayersOpinion = 0;
     public Quest GivenQuest;
     internal bool isQuestCompleted = false;
@@ -13,18 +12,24 @@ public class Character : MonoBehaviour
     internal int DefaultCutsceneID;
     internal bool QuestGiven = false;
     bool CanInteract = true;
+    GameObject SpeechBubble;
 
     // Start is called before the first frame update
     void Start()
     {
         DefaultCutsceneID = CutsceneID;
-        OpinionOfPlayer = StartingOpinion;
+        SpeechBubble = GetComponentInChildren<TextAppear>().gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
+        if(GivenQuest)
+        {
+            if(isQuestCompleted)
+            {
+                SpeechBubble.SetActive(false);
+            }
+        }
     }
 
     public void InteractWith()
@@ -43,7 +48,8 @@ public class Character : MonoBehaviour
                     CutsceneID = GivenQuest.CompleteDialogueID;
                     PlayDialogue();
                     isQuestCompleted = true;
-                    
+                    GetComponentInChildren<ParticleSystem>().Stop();
+
                 }
                 else
                 {
@@ -74,11 +80,6 @@ public class Character : MonoBehaviour
         DialogueSystem.Instance.TWEffect.CurrentCutsceneID = CutsceneID;
         DialogueSystem.Instance.CurrentNPC = this;
         DialogueSystem.Instance.updateDialogue(CutsceneID);
-    }
-
-    public int GetOpinionOfPlayer()
-    {
-        return OpinionOfPlayer;
     }
 
     public int GetPlayerOpinion()

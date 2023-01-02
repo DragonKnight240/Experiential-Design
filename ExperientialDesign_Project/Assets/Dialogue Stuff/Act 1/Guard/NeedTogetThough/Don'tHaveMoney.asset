@@ -20,6 +20,8 @@ MonoBehaviour:
   ScriptLow: 
   LowValue: 0
   Repeatable: 0
-  Choices: []
+  Choices:
+  - {fileID: 11400000, guid: b2f27d6e311798940b110bb5c026b392, type: 2}
+  - {fileID: 11400000, guid: 4364c94fc535aa04f9d91e798a74cbea, type: 2}
   LoadSceneAfter: 
   ChangeImage: 0

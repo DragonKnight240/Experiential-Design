@@ -19,5 +19,5 @@ MonoBehaviour:
   ItemTaken: {fileID: 11400000, guid: 0ad97a3ff86da3245a256c596938d534, type: 2}
   MoneyRecieved: 0
   MoneyTaken: 0
-  NewDialogueID: -1
+  NewDialogueID: 48
   RemoveOnChoose: 0

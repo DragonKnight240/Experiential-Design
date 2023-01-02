@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BuyMeat 1
   m_EditorClassIdentifier: 
   Type: 0
-  Speaker: Store Lady
+  Speaker: Food Seller
   Script: Meat? Of course. 2 Gold.
   ScriptHigh: Of course dear! 2 Gold please.
   HighValue: 2

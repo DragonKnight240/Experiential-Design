@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Lich3
   m_EditorClassIdentifier: 
-  Speaker: Germaine
-  Script: Oh you like birds? I guess they aren't that bad when they jumping out at
-    us.
+  Type: 3
+  Speaker: Bird
+  Script: ...
+  ScriptHigh: 
+  HighValue: 0
+  ScriptLow: 
+  LowValue: 0
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

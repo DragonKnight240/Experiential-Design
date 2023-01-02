@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Blacksmith 2
   m_EditorClassIdentifier: 
   Type: 3
-  Speaker: Blacksmith
-  Script: "Calm yourself lad \u2018m Just peachy! Just help me move this shi-ah stuff
-    off me."
+  Speaker: Allen
+  Script: I was looking for a sword.
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 

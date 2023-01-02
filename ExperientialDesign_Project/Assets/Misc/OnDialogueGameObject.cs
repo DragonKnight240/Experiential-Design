@@ -5,13 +5,16 @@ using UnityEngine;
 public class OnDialogueGameObject : OnDialogueLine
 {
 
-    GameObject GameObject;
+    public GameObject GameObject;
     bool active = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject = this.gameObject;
+        if (!GameObject)
+        {
+            GameObject = this.gameObject;
+        }
     }
 
     public void Update()

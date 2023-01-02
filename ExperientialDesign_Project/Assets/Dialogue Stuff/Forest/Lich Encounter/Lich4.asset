@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfeb2453f5408438f91c1cc27a65ad, type: 3}
   m_Name: Lich4
   m_EditorClassIdentifier: 
-  Speaker: Rin
-  Script: I don't but Father did, he would aways look out for them said he's only
-    here because of one.
+  Type: 2
+  Speaker: Allen
+  Script: I'm gonna call you Lich.
+  ScriptHigh: Father called all birds Lich so I'll call you Lich.
+  HighValue: 3
+  ScriptLow: I'll name you Lich.
+  LowValue: -3
   Repeatable: 0
+  Choices: []
+  LoadSceneAfter: 
+  ChangeImage: 0

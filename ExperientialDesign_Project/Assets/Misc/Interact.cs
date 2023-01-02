@@ -5,10 +5,33 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     internal bool Active = true;
+    public GameObject OutOfRangeUI;
+    float OutOfRangeTimer = 0;
+    public float OutOfRangeMax = 2;
+    public float MaxDistance = 20;
+
+    private void Start()
+    {
+        //if (DontDestroy.UIMain != null)
+        //{
+        //    OutOfRangeUI = DontDestroy.UIMain.OutofRangeUI;
+        //}
+    }
 
     private void Update()
     {
-        if(DialogueSystem.Instance.TWEffect.UIPanel.activeInHierarchy || Inventory.Instance.InventoryPanel.activeInHierarchy)
+        if (OutOfRangeUI.activeInHierarchy)
+        {
+            OutOfRangeTimer += Time.unscaledDeltaTime;
+
+            if (OutOfRangeTimer >= OutOfRangeMax)
+            {
+                OutOfRangeTimer = 0;
+                OutOfRangeUI.SetActive(false);
+            }
+        }
+
+        if (DialogueSystem.Instance.TWEffect.UIPanel.activeInHierarchy || Inventory.Instance.InventoryPanel.activeInHierarchy)
         {
             Active = false;
         }
@@ -25,15 +48,34 @@ public class Interact : MonoBehaviour
             {
                 if (Hit.transform.CompareTag("Character"))
                 {
-                    Hit.transform.GetComponent<Character>().InteractWith();
+                    if (TargetInRange(Hit))
+                    {
+                        Hit.transform.GetComponent<Character>().InteractWith();
+                    }
                 }
                 else if (Hit.transform.CompareTag("Interactable"))
                 {
-                    Hit.transform.GetComponent<Interactable>().interactWith();
+                    if (TargetInRange(Hit))
+                    {
+                        Hit.transform.GetComponent<Interactable>().interactWith();
+                    }
                 }
             }
 
             print(Hit.collider.gameObject.name);
         }
+    }
+
+    bool TargetInRange(RaycastHit Hit)
+    {
+        if (Vector3.Distance(Hit.point, transform.position) >= MaxDistance)
+        {
+            
+            OutOfRangeTimer = 0;
+            OutOfRangeUI.SetActive(true);
+            return false;
+        }
+
+        return true;
     }
 }

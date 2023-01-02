@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: MystriousPotion
   m_EditorClassIdentifier: 
   Name: Mysterious Potion
-  Description: A Potion that you found in a box by the mill. Could it be the health
-    potion the potion master was on about?
+  Description: A potion
   Image: {fileID: 0}

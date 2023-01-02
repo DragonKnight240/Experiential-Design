@@ -28,14 +28,7 @@ public class ChoiceButton : MonoBehaviour
 
         if (choice.CharacterImpact != 0)
         {
-            if (NPCTalkingTo != null)
-            {
-                NPCTalkingTo.OpinionOfPlayer += choice.CharacterImpact;
-            }
-            else
-            {
-                print("Failed");
-            }
+            GameManager.Instance_.GermaineOpinion += choice.CharacterImpact;
         }
 
         if (choice.ItemRecieved != null)
@@ -65,7 +58,7 @@ public class ChoiceButton : MonoBehaviour
             DialogueSystem.Instance.CurrentDialogueMax = DialogueSystem.Instance.Cutscenes[choice.NewDialogueID].script.Count;
             DialogueSystem.Instance.CurrentDialogueID = 0;
             DialogueSystem.Instance.TWEffect.CurrentCutsceneID = choice.NewDialogueID;
-            DialogueSystem.Instance.updateDialogue(choice.NewDialogueID);
+            //DialogueSystem.Instance.updateDialogue(choice.NewDialogueID);
         }
         else
         {

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Blacksmith 3
   m_EditorClassIdentifier: 
   Type: 3
-  Speaker: Allen
-  Script: "Shouldn\u2019t I grab someone or um-"
+  Speaker: Blacksmith
+  Script: Loo- ah it's a kid...
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 3
   Speaker: Blacksmith
-  Script: Well I already told your sister and I'm sure you've hear but Chartette
-    is missing.
+  Script: Ah I guess you want a sword, just like Germaine did at your age. Leonhardt
+    needs to find kids who don't like weapons...
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 

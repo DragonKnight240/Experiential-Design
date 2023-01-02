@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 3
   Speaker: Allen
-  Script: Ar- Are you ok, Mr? Do you need someone I can grab someone?
+  Script: You are the blacksmith right?
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f027435b327df84f9e154fa8e264701, type: 3}
   m_Name: HealPotion
   m_EditorClassIdentifier: 
-  Name: Health Potion
-  Description: A potion that heals all your wounds.
+  Name: Red Potion
+  Description: A potion with a red liquid.
   Image: {fileID: 0}

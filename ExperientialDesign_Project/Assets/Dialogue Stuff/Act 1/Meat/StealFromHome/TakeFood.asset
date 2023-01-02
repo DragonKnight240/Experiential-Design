@@ -19,5 +19,5 @@ MonoBehaviour:
   ItemTaken: {fileID: 0}
   MoneyRecieved: 0
   MoneyTaken: 0
-  NewDialogueID: -1
+  NewDialogueID: 52
   RemoveOnChoose: 0

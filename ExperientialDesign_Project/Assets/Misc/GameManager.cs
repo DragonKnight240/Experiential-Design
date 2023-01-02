@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     int Karma = 0;
     int Money = 0;
     internal int GermaineOpinion = 0;
+    internal int PlayerGermaineOpinion = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void increaseKarma(int amount)

@@ -415,96 +415,6 @@ Transform:
   m_Father: {fileID: 2078892731418981593}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &740046762901469834
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 740046762901469833}
-  - component: {fileID: 740046762901469832}
-  m_Layer: 0
-  m_Name: PlayerRange
-  m_TagString: PlayerRange
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &740046762901469833
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740046762901469834}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4022037551164726873}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &740046762901469832
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740046762901469834}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.79604423
-  m_Center: {x: 0, y: 0.5807343, z: -0.05044548}
---- !u!1 &740046763005827027
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 740046763005827026}
-  - component: {fileID: 740046763005827025}
-  m_Layer: 0
-  m_Name: MeleeZone
-  m_TagString: MeleeZone
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &740046763005827026
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740046763005827027}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4022037551164726873}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &740046763005827025
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740046763005827027}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.7, z: 0.54}
-  m_Center: {x: 0, y: 0.93, z: 0.25}
 --- !u!1 &772722238452828495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4735,6 +4645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 623317800643652154}
   - component: {fileID: 4762401846132331127}
+  - component: {fileID: 1491154804}
   m_Layer: 0
   m_Name: PT_Lowpoly_Medieval_Armors_Female_Moduar_Free_pack
   m_TagString: Untagged
@@ -4750,7 +4661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5688598118735398371}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.046, y: 0.077, z: 0}
   m_LocalScale: {x: 0.76648575, y: 0.76648575, z: 0.76648575}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4792,16 +4703,28 @@ Animator:
   m_GameObject: {fileID: 5688598118735398371}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0cc5e7d23b6879a4d8b3644f02cd8430, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1d6615e592724564e836d1a9f0071e48, type: 2}
+  m_Controller: {fileID: 9100000, guid: 82cb283c95ddfc343809c790a6d1eb67, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1491154804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5688598118735398371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242cbccdb3872a247818525c2782db9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5706426455849145331
 GameObject:
   m_ObjectHideFlags: 0
@@ -5122,8 +5045,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 623317800643652154}
-  - {fileID: 740046762901469833}
-  - {fileID: 740046763005827026}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5139,8 +5060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5db30807c661714497d5e53481519c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
-  MeleeAttackZone: {fileID: 740046763005827025}
+  Health: 2
+  MeleeAttackZone: {fileID: 0}
   Speed: 5
   Seconds: 2
 --- !u!136 &740046764310506966
@@ -5185,6 +5106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5414c9e73e0d564eba86de6a37bb07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutOfRangeUI: {fileID: 0}
+  OutOfRangeMax: 2
+  MaxDistance: 3
 --- !u!1 &6167332645038255852
 GameObject:
   m_ObjectHideFlags: 0

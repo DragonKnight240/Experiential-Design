@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Blacksmith 6
   m_EditorClassIdentifier: 
   Type: 3
-  Speaker: Allen
-  Script: Lad I mean it in the nicest way, shut it. I have basic medicine in my house,
-    I can patch myself up just wait here.
+  Speaker: Blacksmith
+  Script: Well kid I'll be back in a sec you just look around I guess.
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 

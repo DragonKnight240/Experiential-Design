@@ -21,7 +21,7 @@ MonoBehaviour:
   LowValue: 0
   Repeatable: 0
   Choices:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f4aee77e23a28fa4f8838e79e713bf93, type: 2}
+  - {fileID: 11400000, guid: acc77698f3a2ad5478a4fcd876e74df4, type: 2}
   LoadSceneAfter: 
   ChangeImage: 0

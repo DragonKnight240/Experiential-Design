@@ -19,34 +19,34 @@ public class Player : MonoBehaviour
     {
         RB = GetComponent<Rigidbody>();
         //MeleeAttackZone = GetComponent<BoxCollider>();
-        MeleeAttackZone.enabled = false;
+        //MeleeAttackZone.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(MeleeAttackZone.enabled)
-        {
-            Timer += Time.deltaTime;
+        //if(MeleeAttackZone.enabled)
+        //{
+        //    Timer += Time.deltaTime;
 
-            if(Timer >= Seconds)
-            {
-                MeleeAttackZone.enabled = false;
-                Timer = 0;
-            }
-        }
+        //    if(Timer >= Seconds)
+        //    {
+        //        MeleeAttackZone.enabled = false;
+        //        Timer = 0;
+        //    }
+        //}
 
         if (!isDead)
         {
             Move();
 
-            if (EquipedWeapon == null)
-            {
-                if (Input.GetButton("Fire1"))
-                {
-                    MeleeAttackZone.enabled = true;
-                }
-            }
+            //if (EquipedWeapon == null)
+            //{
+            //    if (Input.GetButton("Fire1"))
+            //    {
+            //        MeleeAttackZone.enabled = true;
+            //    }
+            //}
         }
     }
 

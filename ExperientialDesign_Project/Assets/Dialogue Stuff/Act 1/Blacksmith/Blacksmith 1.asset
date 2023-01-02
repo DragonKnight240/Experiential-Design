@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Blacksmith 1
   m_EditorClassIdentifier: 
   Type: 3
-  Speaker: Allen
-  Script: "I can grab someone from over there or maybe over that way- ah but more
-    people that way and shouldn\u2019t they have hear-"
+  Speaker: Blacksmith
+  Script: I'm busy at the moment. Come back later.
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 

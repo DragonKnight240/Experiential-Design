@@ -8,11 +8,16 @@ public class DialogueInteract : Interactable
 
     public override void interactWith()
     {
+        if(!CanInteract)
+        {
+            print("Return");
+            return;
+        }
+
         Time.timeScale = 0;
         DialogueSystem.Instance.CurrentDialogueMax = DialogueSystem.Instance.Cutscenes[DialogueID].script.Count;
         DialogueSystem.Instance.CurrentDialogueID = 0;
         DialogueSystem.Instance.TWEffect.CurrentCutsceneID = DialogueID;
-        DialogueSystem.Instance.updateDialogue(DialogueID);
         DialogueSystem.Instance.updateDialogue(DialogueID);
     }
 }

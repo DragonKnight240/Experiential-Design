@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab1792abe31a494cbc60717219d71fe, type: 3}
   m_Name: StealSword
   m_EditorClassIdentifier: 
-  Description: 
+  Description: Steal Sword
   KarmaImpact: 0
   CharacterImpact: 0
   ItemRecieved: {fileID: 11400000, guid: bead9b40bc27d6345ba7249a08a56903, type: 2}
@@ -20,3 +20,4 @@ MonoBehaviour:
   MoneyRecieved: 0
   MoneyTaken: 0
   NewDialogueID: 9
+  RemoveOnChoose: 0

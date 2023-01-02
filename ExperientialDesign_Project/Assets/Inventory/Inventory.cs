@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     public GameObject ItemSectionPrefab;
     public GameObject DescriptionPanel;
     public TextMeshProUGUI DescriptionText;
+    public GameObject ItemLocationsParent;
     public Dictionary<Item, GameObject> ItemDictionary;
     public GameObject MoneyUI;
     public TextMeshProUGUI MoneyDisplay;
@@ -21,6 +22,9 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI NewItemText;
     float ItemTimer = 0;
     public float ItemMax = 2;
+    public AudioClip OpenBag;
+    public AudioClip AddInventory;
+    public AudioClip MoneyObtained;
 
     static internal Inventory Instance;
 
@@ -29,15 +33,25 @@ public class Inventory : MonoBehaviour
     {
         if (Inventory.Instance != null)
         {
-            Destroy(this.gameObject);
+            ItemDictionary = new Dictionary<Item, GameObject>();
+            foreach(Item items in Inventory.Instance.ItemDictionary.Keys)
+            {
+                AddToInventory(items, false);
+            }
+
+            Inventory.Instance = this;
+            Destroy(Inventory.Instance);
         }
         else
         {
             Inventory.Instance = this;
+            ItemDictionary = new Dictionary<Item, GameObject>();
         }
 
         InventoryPanel.SetActive(false);
-        ItemDictionary = new Dictionary<Item, GameObject>();
+        
+
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -73,23 +87,36 @@ public class Inventory : MonoBehaviour
 
     public void ChangeMoney()
     {
+        SoundManager.Instance.SpawnSFX(MoneyObtained);
         MoneyDisplay.text = GameManager.Instance_.GetMoney().ToString();
         MoneyUI.gameObject.SetActive(true);
     }
 
-    public void AddToInventory(Item newItem)
+    public void AddToInventory(Item newItem, bool PlaySound = true)
     {
+        if(ItemDictionary.ContainsKey(newItem))
+        {
+            return;
+        }
+
+        if (PlaySound)
+        {
+            SoundManager.Instance.SpawnSFX(AddInventory);
+        }
+
         NewItemText.text = newItem.Name;
         NewItemUI.SetActive(true);
 
         Transform NewPosition = InventoryPanel.transform.GetChild(0);
         GameObject NewSection = Instantiate(ItemSectionPrefab, NewPosition.transform);
-        float Width = ItemSectionPrefab.GetComponent<RectTransform>().sizeDelta.y;
-        float Height = InventoryPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x;
 
-        NewSection.transform.position = new Vector3(NewPosition.transform.position.x /*- (Height/2)*/, NewPosition.transform.position.y - (Width * (ItemDictionary.Count - 1)) - YOffset, NewPosition.transform.position.z);
-        NewSection.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newItem.Name;
         ItemDictionary.Add(newItem, NewSection);
+
+        NewPosition = ItemLocationsParent.transform.GetChild(ItemDictionary.Count - 1);
+
+        NewSection.transform.position = NewPosition.position;
+
+        NewSection.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = newItem.Name;
         NewSection.GetComponent<ItemSection>().item = newItem;
     }
 
@@ -98,21 +125,19 @@ public class Inventory : MonoBehaviour
         Destroy(ItemDictionary[oldItem]);
         ItemDictionary.Remove(oldItem);
 
-        Vector3 NewPosition = InventoryPanel.transform.GetChild(0).transform.position;
-        NewPosition = new Vector3(NewPosition.x, 0, NewPosition.z);
-        float Width = ItemSectionPrefab.GetComponent<RectTransform>().sizeDelta.y;
-        float Height = InventoryPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x;
         int DictionaryPairNo = 0;
 
         foreach (KeyValuePair<Item, GameObject> ItemPair in ItemDictionary)
         {
-            ItemPair.Value.transform.position = new Vector3(transform.position.x, transform.position.y /*-(Height / 2)*/ - (DictionaryPairNo * Width) - YOffset, transform.position.z);
+            ItemPair.Value.transform.position = ItemLocationsParent.transform.GetChild(DictionaryPairNo).position;
             DictionaryPairNo++;
         }
     }
 
     void ToggleInventory()
     {
+        SoundManager.Instance.SpawnSFX(OpenBag);
+
         if (!InventoryPanel.activeInHierarchy)
         {
             Time.timeScale = 0;

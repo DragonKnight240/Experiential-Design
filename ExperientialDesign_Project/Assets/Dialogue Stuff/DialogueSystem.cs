@@ -60,14 +60,17 @@ public class DialogueSystem : MonoBehaviour
 
     public void updateDialogue(int cutsceneID, Character NPC = null)
     {
-        currentCutsceneID = cutsceneID;
-        CurrentTreeType = Cutscenes[currentCutsceneID].script[CurrentDialogueID].Type;
-        CurrentNPC = NPC;
-        WhichTreeToFollow(cutsceneID, NPC);
+        if (TWEffect.CurrentCutsceneID != -1)
+        {
+            currentCutsceneID = cutsceneID;
+            CurrentTreeType = Cutscenes[currentCutsceneID].script[CurrentDialogueID].Type;
+            CurrentNPC = NPC;
+            WhichTreeToFollow(cutsceneID, NPC);
 
-        currentDialogue = Cutscenes[currentCutsceneID].script[CurrentDialogueID];
+            currentDialogue = Cutscenes[currentCutsceneID].script[CurrentDialogueID];
 
-        TWEffect.NewDialogue();
+            TWEffect.NewDialogue();
+        }
     }
 
     public void WhichTreeToFollow(int cutsceneID, Character NPC)
@@ -93,11 +96,11 @@ public class DialogueSystem : MonoBehaviour
                 }
             case DialogueTreeTypes.CharacterOpinion:
                 {
-                    if (Cutscenes[cutsceneID].script[CurrentDialogueID].LowValue > NPC.GetOpinionOfPlayer())
+                    if (Cutscenes[cutsceneID].script[CurrentDialogueID].LowValue > GameManager.Instance_.GermaineOpinion)
                     {
                         CurrentTreeStat = DialogueTree.Low;
                     }
-                    else if (Cutscenes[cutsceneID].script[CurrentDialogueID].HighValue < NPC.GetOpinionOfPlayer())
+                    else if (Cutscenes[cutsceneID].script[CurrentDialogueID].HighValue < GameManager.Instance_.GermaineOpinion)
                     {
                         CurrentTreeStat = DialogueTree.High;
                     }
@@ -110,11 +113,11 @@ public class DialogueSystem : MonoBehaviour
                 }
             case DialogueTreeTypes.PlayerOpinion:
                 {
-                    if (Cutscenes[currentCutsceneID].script[CurrentDialogueID].LowValue > NPC.GetPlayerOpinion())
+                    if (Cutscenes[currentCutsceneID].script[CurrentDialogueID].LowValue > GameManager.Instance_.PlayerGermaineOpinion)
                     {
                         CurrentTreeStat = DialogueTree.Low;
                     }
-                    else if(Cutscenes[currentCutsceneID].script[CurrentDialogueID].HighValue < NPC.GetPlayerOpinion())
+                    else if(Cutscenes[currentCutsceneID].script[CurrentDialogueID].HighValue < GameManager.Instance_.PlayerGermaineOpinion)
                     {
                         CurrentTreeStat = DialogueTree.High;
                     }
@@ -157,7 +160,10 @@ public class DialogueSystem : MonoBehaviour
             Destroy(Child.gameObject);
         }
 
-        DialogueSystem.Instance.TWEffect.NextDialogue();
+        if (TWEffect.CurrentCutsceneID != -1)
+        {
+            TWEffect.NextDialogue();
+        }
     }
 
     private void OnDestroy()

@@ -18,10 +18,10 @@ public class LoadScene : MonoBehaviour
     {
         //SceneManager.LoadScene(SceneToLoad);
 
-        if (Germaine)
-        {
-            GameManager.Instance_.GermaineOpinion = Germaine.GetOpinionOfPlayer();
-        }
+        //if (Germaine)
+        //{
+        //    GameManager.Instance_.GermaineOpinion = Germaine.GetOpinionOfPlayer();
+        //}
 
         Time.timeScale = 0;
         Fade.fadeOut = true;
