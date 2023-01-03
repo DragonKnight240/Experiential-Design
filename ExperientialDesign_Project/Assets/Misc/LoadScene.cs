@@ -22,7 +22,7 @@ public class LoadScene : MonoBehaviour
         //{
         //    GameManager.Instance_.GermaineOpinion = Germaine.GetOpinionOfPlayer();
         //}
-
+        Fade = FindObjectOfType<Fade>();
         Time.timeScale = 0;
         Fade.fadeOut = true;
         StartCoroutine(LoadAsync());

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f027435b327df84f9e154fa8e264701, type: 3}
   m_Name: ToyShield
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
+  Name: Toy Shield
+  Description: 'A Toy shield found in the woods. Two kids demanded you get it. '
   Image: {fileID: 0}

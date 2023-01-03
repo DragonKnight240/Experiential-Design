@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaterBucketCom
   m_EditorClassIdentifier: 
   Type: 0
-  Speaker: 
+  Speaker: Man
   Script: Thank you! Here have this.
   ScriptHigh: Thank you, you really are such a good boy. Have this.
   HighValue: 3

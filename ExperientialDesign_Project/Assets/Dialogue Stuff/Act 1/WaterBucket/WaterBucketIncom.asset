@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaterBucketIncom
   m_EditorClassIdentifier: 
   Type: 0
-  Speaker: 
+  Speaker: Man
   Script: Young Germaine would have gotten it by now...
   ScriptHigh: Have you got my water yet?
   HighValue: 3

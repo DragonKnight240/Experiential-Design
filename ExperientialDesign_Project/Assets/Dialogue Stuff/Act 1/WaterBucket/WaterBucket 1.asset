@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaterBucket 1
   m_EditorClassIdentifier: 
   Type: 0
-  Speaker: Young Mother
+  Speaker: Man
   Script: Be a dear and full this bucket with water.
   ScriptHigh: Please, can you grab me some water?
   HighValue: 3

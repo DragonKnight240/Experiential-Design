@@ -107,7 +107,7 @@ public class Inventory : MonoBehaviour
         NewItemText.text = newItem.Name;
         NewItemUI.SetActive(true);
 
-        Transform NewPosition = InventoryPanel.transform.GetChild(0);
+        Transform NewPosition = InventoryPanel.transform.GetChild(0).GetChild(0);
         GameObject NewSection = Instantiate(ItemSectionPrefab, NewPosition.transform);
 
         ItemDictionary.Add(newItem, NewSection);
