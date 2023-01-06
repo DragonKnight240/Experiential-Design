@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: BuyForLeonhardt
   m_EditorClassIdentifier: 
   Description: Buy it for Leonhardt
-  KarmaImpact: -1
+  KarmaImpact: -2
   CharacterImpact: 0
   ItemRecieved: {fileID: 0}
   ItemTaken: {fileID: 0}
   MoneyRecieved: 0
   MoneyTaken: 0
   NewDialogueID: 38
+  RemoveOnChoose: 0

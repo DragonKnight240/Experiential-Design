@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description: I Want To Find Chartette
   KarmaImpact: 0
-  CharacterImpact: 0
+  CharacterImpact: -1
   ItemRecieved: {fileID: 0}
   ItemTaken: {fileID: 0}
   MoneyRecieved: 0
   MoneyTaken: 0
   NewDialogueID: 7
+  RemoveOnChoose: 0

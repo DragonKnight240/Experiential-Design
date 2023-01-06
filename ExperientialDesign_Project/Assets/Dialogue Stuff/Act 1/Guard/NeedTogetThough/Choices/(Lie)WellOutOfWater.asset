@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: (Lie)WellOutOfWater
   m_EditorClassIdentifier: 
   Description: (Lie) Well is out of water
-  KarmaImpact: 0
+  KarmaImpact: -1
   CharacterImpact: 0
   ItemRecieved: {fileID: 0}
   ItemTaken: {fileID: 0}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab1792abe31a494cbc60717219d71fe, type: 3}
   m_Name: Hand Over
   m_EditorClassIdentifier: 
-  Description: '*Hand Over Shield*'
+  Description: (Hand Over Shield)
   KarmaImpact: 1
   CharacterImpact: 0
   ItemRecieved: {fileID: 0}
@@ -20,3 +20,4 @@ MonoBehaviour:
   MoneyRecieved: 1
   MoneyTaken: 0
   NewDialogueID: 30
+  RemoveOnChoose: 0

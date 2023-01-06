@@ -28,15 +28,18 @@ public class Interactable : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (CanInteract)
+        if (!DialogueSystem.Instance.TWEffect.UIPanel.activeInHierarchy || !Inventory.Instance.InventoryPanel.activeInHierarchy || !FindObjectOfType<Options>().gameObject.activeInHierarchy)
         {
-            DialogueSystem.Instance.TWEffect.Mouse.SetActive(true);
+            if (CanInteract)
+            {
+                DialogueSystem.Instance.TWEffect.Mouse.SetActive(true);
+            }
         }
     }
 
     private void OnMouseExit()
     {
-        if (CanInteract)
+        if (!DialogueSystem.Instance.TWEffect.UIPanel.activeInHierarchy)
         {
             DialogueSystem.Instance.TWEffect.Mouse.SetActive(false);
         }

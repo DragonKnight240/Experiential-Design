@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class OnDialogueAnim : OnDialogueLine
 {
-    internal Animator Anim;
+    public Animator Anim;
     public string TriggerNameTo;
 
     // Start is called before the first frame update
     void Start()
     {
-        Anim = GetComponent<Animator>();
+        if (!Anim)
+        {
+            Anim = GetComponent<Animator>();
+        }
     }
 
     public override void CorrectDialoguePlaying(bool Active)

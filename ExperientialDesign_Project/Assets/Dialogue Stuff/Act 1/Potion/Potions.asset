@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Potions
   m_EditorClassIdentifier: 
   Type: 3
-  Speaker: Potions Master
-  Script: I could have sworn that I had another health potion... Ah why is this box
-    full of grain?
-  ScriptHigh: 
-  HighValue: 0
-  ScriptLow: 
-  LowValue: 0
+  Speaker: Seller
+  Script: 'I could have sworn that I had another health potion... '
+  ScriptHigh: I'm missing a red health potion and a green poison... Ah maybe I shouldn't
+    say that so loud...
+  HighValue: 4
+  ScriptLow: A missing green potion that's not good... Hey beat it kid I know all
+    about you.
+  LowValue: -4
   Repeatable: 0
   Choices: []
   LoadSceneAfter: 

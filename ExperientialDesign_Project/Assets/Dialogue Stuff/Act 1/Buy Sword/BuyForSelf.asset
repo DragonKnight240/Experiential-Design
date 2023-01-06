@@ -20,3 +20,4 @@ MonoBehaviour:
   MoneyRecieved: 0
   MoneyTaken: 0
   NewDialogueID: 39
+  RemoveOnChoose: 0

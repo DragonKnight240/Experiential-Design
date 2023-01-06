@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: HowKnowChartette
   m_EditorClassIdentifier: 
   Description: How Do You Know Chartette?
-  KarmaImpact: -1
+  KarmaImpact: -2
   CharacterImpact: 0
   ItemRecieved: {fileID: 0}
   ItemTaken: {fileID: 0}
   MoneyRecieved: 0
   MoneyTaken: 0
   NewDialogueID: 34
+  RemoveOnChoose: 0

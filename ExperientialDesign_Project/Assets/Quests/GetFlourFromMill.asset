@@ -16,5 +16,7 @@ MonoBehaviour:
   WantedItem: {fileID: 11400000, guid: 8ae0f5f4c16b8ee4fa0085ebbffbc0ea, type: 2}
   RewardItem: {fileID: 0}
   RewardMoney: 3
-  CompleteDialogueID: 14
-  IncompleteID: 15
+  GivenItem: {fileID: 0}
+  CompleteDialogueID: 15
+  IncompleteID: 16
+  AddedChoice: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StealSword
   m_EditorClassIdentifier: 
   Description: Steal Sword
-  KarmaImpact: 0
+  KarmaImpact: -2
   CharacterImpact: 0
   ItemRecieved: {fileID: 11400000, guid: bead9b40bc27d6345ba7249a08a56903, type: 2}
   ItemTaken: {fileID: 0}

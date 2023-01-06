@@ -9,13 +9,11 @@ public class Interact : MonoBehaviour
     float OutOfRangeTimer = 0;
     public float OutOfRangeMax = 2;
     public float MaxDistance = 20;
+    Options Options;
 
     private void Start()
     {
-        //if (DontDestroy.UIMain != null)
-        //{
-        //    OutOfRangeUI = DontDestroy.UIMain.OutofRangeUI;
-        //}
+        Options = FindObjectOfType<Options>();
     }
 
     private void Update()
@@ -31,7 +29,7 @@ public class Interact : MonoBehaviour
             }
         }
 
-        if (DialogueSystem.Instance.TWEffect.UIPanel.activeInHierarchy || Inventory.Instance.InventoryPanel.activeInHierarchy)
+        if (DialogueSystem.Instance.TWEffect.UIPanel.activeInHierarchy || Inventory.Instance.InventoryPanel.activeInHierarchy || Options.OptionsMenuUI.activeInHierarchy)
         {
             Active = false;
         }

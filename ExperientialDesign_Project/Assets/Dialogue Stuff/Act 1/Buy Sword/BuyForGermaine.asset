@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: BuyForGermaine
   m_EditorClassIdentifier: 
   Description: Buy it for Germaine
-  KarmaImpact: 0
-  CharacterImpact: 0
+  KarmaImpact: 1
+  CharacterImpact: 1
   ItemRecieved: {fileID: 0}
   ItemTaken: {fileID: 0}
   MoneyRecieved: 0
   MoneyTaken: 0
   NewDialogueID: 33
+  RemoveOnChoose: 0

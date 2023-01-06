@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     int Money = 0;
     internal int GermaineOpinion = 0;
     internal int PlayerGermaineOpinion = 0;
+    internal float MasterSlider;
+    internal float SFXSlider;
+    internal float MusicSlider;
+    internal float AmbianceSlider;
 
     // Start is called before the first frame update
     void Start()

@@ -7,6 +7,8 @@ public class OnDialogueGameObject : OnDialogueLine
 
     public GameObject GameObject;
     bool active = false;
+    public bool DisableOnEnd = false;
+    internal bool pending = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,14 +28,35 @@ public class OnDialogueGameObject : OnDialogueLine
             HasFaded = false;
             //GameObject.SetActive(active);
         }
+
+        if (pending)
+        {
+            if (!DialogueSystem.Instance.TWEffect.UIPanel.activeInHierarchy)
+            {
+                GameObject.SetActive(active);
+                pending = false;
+            }
+        }
     }
 
     public override void CorrectDialoguePlaying(bool Active)
     {
         active = Active;
         //HasFaded = true;
-        //FindObjectOfType<Fade>().fadeOut = true;
-        //FindObjectOfType<Fade>().fadeBoth = true;
-        GameObject.SetActive(active);
+        //fade.fadeOut = true;
+        //fade.fadeBoth = true;
+        if (DisableOnEnd)
+        {
+            pending = true;
+        }
+        else
+        {
+            GameObject.SetActive(active);
+        }
+
+        if(GetComponent<OnAddItem>())
+        {
+            GetComponent<OnAddItem>().OnAdd();
+        }
     }
 }

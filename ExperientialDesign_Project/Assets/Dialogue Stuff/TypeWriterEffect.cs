@@ -10,7 +10,7 @@ public class TypeWriterEffect : MonoBehaviour
     public GameObject UIPanel;
     TextMeshProUGUI textComponent;
     public float waitSecondsText = 0.2f;
-    bool Finished = false;
+    internal bool Finished = false;
     float timer = 0;
     string dialogue = "";
     int CharNum = 0;
@@ -21,12 +21,14 @@ public class TypeWriterEffect : MonoBehaviour
     public GameObject OtherSpeaker;
     public GameObject TextUIPanel;
     public GameObject Mouse;
+    internal Options Options;
 
     // Start is called before the first frame update
     void Start()
     {
         textComponent = TextUIPanel.GetComponentInChildren<TextMeshProUGUI>();
         textComponent.text = "";
+        Options = FindObjectOfType<Options>();
     }
 
     private void Update()
@@ -71,7 +73,7 @@ public class TypeWriterEffect : MonoBehaviour
             OtherSpeaker.SetActive(false);
             SelfSpeaker.SetActive(true);
         }
-        else if(DialogueSystem.Instance.currentDialogue.Speaker.Contains("None"))
+        else if(DialogueSystem.Instance.currentDialogue.Speaker.Contains("None") || DialogueSystem.Instance.currentDialogue.Speaker == (""))
         {
             OtherSpeaker.SetActive(false);
             SelfSpeaker.SetActive(false);
@@ -107,7 +109,7 @@ public class TypeWriterEffect : MonoBehaviour
 
     void OnPress()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !Options.OptionsMenuUI.activeInHierarchy)
         {
             if (UIPanel.activeInHierarchy && InUse && Finished)
             {

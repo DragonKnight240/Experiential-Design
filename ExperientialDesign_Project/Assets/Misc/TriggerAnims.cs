@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TriggerAnims : MonoBehaviour
 {
-    Animator Anim;
+    internal Animator Anim;
     Rigidbody RB;
+    internal bool doneOnce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,15 +18,29 @@ public class TriggerAnims : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(RB.velocity != Vector3.zero)
+        if (!DialogueSystem.Instance.TWEffect.UIPanel.activeInHierarchy)
         {
-            Anim.ResetTrigger("Idle");
-            Anim.SetTrigger("Moving");
+            if (RB.velocity != Vector3.zero)
+            {
+                Anim.ResetTrigger("Idle");
+                Anim.SetTrigger("Moving");
+                doneOnce = false;
+            }
+            else
+            {
+                Anim.ResetTrigger("Moving");
+                Anim.SetTrigger("Idle");
+                doneOnce = false;
+            }
         }
         else
         {
-            Anim.ResetTrigger("Moving");
-            Anim.SetTrigger("Idle");
+            if (!doneOnce)
+            {
+                Anim.ResetTrigger("Moving");
+                Anim.SetTrigger("Idle");
+                doneOnce = true;
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GermaineLetter 2
   m_EditorClassIdentifier: 
   Type: 3
-  Speaker: Germine
+  Speaker: Germaine
   Script: You agree don't you Allen! We need to help Chartette!
   ScriptHigh: 
   HighValue: 0

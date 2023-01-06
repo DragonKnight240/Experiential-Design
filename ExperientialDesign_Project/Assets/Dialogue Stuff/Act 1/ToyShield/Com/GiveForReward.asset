@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab1792abe31a494cbc60717219d71fe, type: 3}
   m_Name: GiveForReward
   m_EditorClassIdentifier: 
-  Description: For A Reward
+  Description: Ask for A Reward
   KarmaImpact: -2
   CharacterImpact: 0
   ItemRecieved: {fileID: 0}
@@ -20,3 +20,4 @@ MonoBehaviour:
   MoneyRecieved: 2
   MoneyTaken: 0
   NewDialogueID: 29
+  RemoveOnChoose: 0
