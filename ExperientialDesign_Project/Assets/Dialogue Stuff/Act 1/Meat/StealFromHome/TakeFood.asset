@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab1792abe31a494cbc60717219d71fe, type: 3}
   m_Name: TakeFood
   m_EditorClassIdentifier: 
-  Description: 
-  KarmaImpact: 0
+  Description: Take Food
+  KarmaImpact: -3
   CharacterImpact: 0
   ItemRecieved: {fileID: 11400000, guid: 40e007b8d5ad8d4419b2a551356fc003, type: 2}
   ItemTaken: {fileID: 0}

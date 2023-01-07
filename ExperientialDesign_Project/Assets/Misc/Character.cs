@@ -28,6 +28,7 @@ public class Character : MonoBehaviour
             if(isQuestCompleted)
             {
                 SpeechBubble.SetActive(false);
+                CanInteract = false;
             }
         }
     }
@@ -48,7 +49,7 @@ public class Character : MonoBehaviour
                     CutsceneID = GivenQuest.CompleteDialogueID;
                     PlayDialogue();
                     isQuestCompleted = true;
-                    GetComponentInChildren<ParticleSystem>().Stop();
+                    FindObjectOfType<QuestTracker>().CompletedQuest(GivenQuest);
 
                 }
                 else

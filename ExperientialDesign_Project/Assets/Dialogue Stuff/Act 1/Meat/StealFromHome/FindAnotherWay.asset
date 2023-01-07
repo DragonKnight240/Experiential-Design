@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab1792abe31a494cbc60717219d71fe, type: 3}
   m_Name: FindAnotherWay
   m_EditorClassIdentifier: 
-  Description: 
+  Description: Find Another Way
   KarmaImpact: 0
   CharacterImpact: 0
   ItemRecieved: {fileID: 0}

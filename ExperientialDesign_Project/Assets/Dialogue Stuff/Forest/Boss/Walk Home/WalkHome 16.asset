@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 3
   Speaker: Leonhardt
-  Script: You should have waiting for me to assemble the guards.
+  Script: I explictly told you not to go after them.
   ScriptHigh: 
   HighValue: 0
   ScriptLow: 

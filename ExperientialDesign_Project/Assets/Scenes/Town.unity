@@ -8103,43 +8103,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2427643295637099219, guid: 65cb2b9c57040194e918610699f44c84, type: 3}
   m_PrefabInstance: {fileID: 557031276}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &557031278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 557031277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ca4d68f9176e740b90250635cd4b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DialoguePlayingActive: {fileID: 11400000, guid: 9179ff9565fd057498646e8b944fe6b0, type: 2}
-  DialogueDeactive: {fileID: 0}
-  GameObject: {fileID: 0}
-  DisableOnEnd: 0
 --- !u!4 &557031282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2427643295636737779, guid: 65cb2b9c57040194e918610699f44c84, type: 3}
   m_PrefabInstance: {fileID: 557031276}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &557031283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 557031277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d98124e380d031a46a8b5d12545881e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CutsceneID: 0
-  DialogueID: 0
-  choice: {fileID: 11400000, guid: c5dc915b8d446ad499d9e22b0394d204, type: 2}
-  remove: 0
 --- !u!1001 &558371800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17007,6 +16975,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1102817590}
+  - component: {fileID: 1102817592}
+  - component: {fileID: 1102817591}
   m_Layer: 0
   m_Name: MeatDistraction
   m_TagString: Untagged
@@ -17031,6 +17001,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102817591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102817589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98124e380d031a46a8b5d12545881e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CutsceneID: 0
+  DialogueID: 0
+  choice: {fileID: 11400000, guid: c5dc915b8d446ad499d9e22b0394d204, type: 2}
+  remove: 0
+--- !u!114 &1102817592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102817589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ca4d68f9176e740b90250635cd4b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialoguePlayingActive: {fileID: 11400000, guid: 9179ff9565fd057498646e8b944fe6b0, type: 2}
+  DialogueDeactive: {fileID: 0}
+  GameObject: {fileID: 557031277}
+  DisableOnEnd: 0
 --- !u!4 &1105290010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8396534493602926569, guid: 05b39d83e89b2ab4eb66809f220a9201, type: 3}
@@ -17892,6 +17894,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialoguePlayingActive: {fileID: 0}
   DialogueDeactive: {fileID: 11400000, guid: 187d1e47c68cfcf4191fd06005ac50f6, type: 2}
+--- !u!114 &1210236102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870253402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb8a1eb2211be489b87e4e2c6734c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewItem: {fileID: 1210236103}
+--- !u!114 &1210236103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870253402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c15e87ab281f4468a25c8d952847ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanInteract: 0
+  Particles: {fileID: 0}
+  ItemPickup: {fileID: 11400000, guid: da7a1d0e48fae034d8a0e5710397a83b, type: 2}
+  RemoveItem: {fileID: 0}
+  HideOnInteract: 0
 --- !u!4 &1216136945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7113360935359194730, guid: a0cc584653669704e941d618b2aeba63, type: 3}
@@ -30796,6 +30828,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1244539903914237919, guid: c2af11c01d1176e4d98619176b00d199, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cfe6895c2a7dd55499a943f46ef1a8d4, type: 2}
     - target: {fileID: 1244539903914237919, guid: c2af11c01d1176e4d98619176b00d199, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0

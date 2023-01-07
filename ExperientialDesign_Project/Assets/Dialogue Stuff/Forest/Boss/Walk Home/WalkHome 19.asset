@@ -16,8 +16,8 @@ MonoBehaviour:
   Speaker: Germaine
   Script: Me and Allen were fine.
   ScriptHigh: Allen didn't want to come he only put himself in danger to protect
-    me
-  HighValue: 6
+    me.
+  HighValue: 5
   ScriptLow: I don't know why he followed. But he should have stayed home
   LowValue: -5
   Repeatable: 0
